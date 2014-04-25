@@ -1,3 +1,11 @@
+SITE DESCRIPTION:
+'The Camera Snapshot -- Your One-Stop Shop for Digital Camera Information'
+The site would provide listings of Best Cameras to buy, Camera Reviews including images taken with
+the camera being reviewed, a Forum and Photo Contest.
+
+heroku app link
+
+
 == README
 
 This README would normally document whatever steps are necessary to get the

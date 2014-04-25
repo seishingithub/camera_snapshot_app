@@ -2,3 +2,48 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    background-color: #EFEBDF;
+}
+
+
+/* ----- =columns ----- */
+
+.one_third {
+    width: 300px;
+    color: #A1C815;
+    font-size: 40px;
+}
+
+.one_third_columns {
+    width: 300px;
+    color: #A1C815;
+    font-size: 60px;
+}
+
+.two_third {
+    width: 620px;
+}
+
+.full_column {
+    width: 940px;
+}
+
+.side_text {
+    color: #EE845C;
+    font-size: 20px;
+    width: 200px;
+}
+
+.one_third, .two_third, .full_column, .one_third_columns, .side_text {
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.resetColumnSet {
+    clear: both;
+}
