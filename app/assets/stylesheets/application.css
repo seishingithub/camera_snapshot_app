@@ -7,13 +7,22 @@ body {
     background-color: #EFEBDF;
 }
 
+#logo {
+    width: 400px;
+    height: 133px;
+}
+
+#nav_container {
+    list-style-type: none;
+}
+
+
 
 /* ----- =columns ----- */
 
 .one_third {
     width: 300px;
-    color: #A1C815;
-    font-size: 40px;
+
 }
 
 .one_third_columns {
@@ -24,6 +33,8 @@ body {
 
 .two_third {
     width: 620px;
+    color: #759185;
+    font-size: 25px;
 }
 
 .full_column {
@@ -36,7 +47,7 @@ body {
     width: 200px;
 }
 
-.one_third, .two_third, .full_column, .one_third_columns, .side_text {
+.one_third, .two_third, .full_column, .one_third_columns, .side_text{
     position: relative;
     margin-left: 10px;
     margin-right: 10px;

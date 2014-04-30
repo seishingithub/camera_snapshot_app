@@ -3,7 +3,7 @@ SITE DESCRIPTION:
 The site would provide listings of Best Cameras to buy, Camera Reviews including images taken with
 the camera being reviewed, a Forum and Photo Contest.
 
-heroku app link
+http://warm-ridge-4823.herokuapp.com/
 
 
 == README
