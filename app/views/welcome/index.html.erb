@@ -1,50 +1,112 @@
+<!--<header>-->
+  <!--<div id="header_container">-->
+    <!--<div id="header_logo">-->
+
+      <!--&lt;!&ndash;insert logo&ndash;&gt;-->
+      <!--&lt;!&ndash;This is erb tag needs % <= image_tag('the_camera_snapshot_logo_cropped.png') %>&ndash;&gt;-->
+      <!--<img src="/images/the_camera_snapshot_logo_cropped.png" width="400" height="200" alt="Logo"/>-->
+    <!--</div>-->
+
 
 <header>
-  <div id="logo">
-      <!--insert logo-->
-      <%= image_tag('the_camera_snapshot_logo_cropped.png') %>
-  </div>
+  <div id="header_container">
+    <div id="header_logo">
+      <img src="/images/camera_snapshot_logo_no_filmstrip.png" width="125"  alt="Logo" />
+    </div><!--end header_logo-->
+  </div><!--end header-->
 </header>
+
+<div class="colorbar1">&nbsp;</div>
 
 <nav>
   <div id="nav_container">
-    <ul>
-      <a href="/about">
-        <li><img src="/images/nav_about.png" width="110" height="70"></li>
-      </a>
-      <a href="/best_cameras">
-        <li><img src="/images/nav_best_cameras.png" width="110" height="70"></li>
-      </a>
-      <a href="/reviews">
-        <li><img src="/images/nav_reviews.png" width="110" height="70"></li>
-      </a>
-      <a href="/forum">
-        <li><img src="/images/nav_forum.png" width="110" height="70"></li>
-      </a>
-      <a href="/photo_contest">
-        <li><img src="/images/nav_photo_contest.png" width="110" height="70"></li>
-      </a>
+
+    <ul id="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Best Cameras</a></li>
+      <li><a href="#">Reviews</a></li>
+      <li><a href="#">Forum</a></li>
+      <li><a href="#">Photo Contest</a></li>
     </ul>
-  </div>
-  <!--end navigation-->
+  </div><!--end navigation-->
 </nav>
 
-<div id="content">
-     <div id="content_container">
+<div class="colorbar1">&nbsp;</div>
 
-       <!--  1/3 x 2/3 -->
-       <div class="top_columns">
-         <div class="two_third">
-           <p>Your One-Stop Shop for Digital Camera Information</p>
-
-           <!--<img src="insert image">-->
-         </div>
-       </div>
-       <div class="one_third">
-       </div>
-       <div class="resetColumnSet"></div>
-
-     </div>
-<!--end content_container-->
+<div id="photo_home">
+  <div class="photo_container">
+  <img src="/images/trees_image_cropped.png"   alt="Homepage Photo" />
+  </div>
 </div>
-<!--end content-->
+
+<div id="content">
+  <div id="content_container">
+
+    <!--  1/3 x 2/3 -->
+    <div class="one_third"></div>
+    <div class="resetColumnSet"></div>
+
+  </div><!--end content_container-->
+</div><!--end content-->
+
+<footer>
+  <div id="footer_container">
+
+    <!--  2/3 x 1/3 -->
+    <div class="two_third"></div>
+    <div class="resetColumnSet"></div>
+
+  </div><!--end footer_container-->
+</footer>
+
+
+
+
+
+
+
+
+<!--</div>-->
+<!--</header>-->
+
+<!--<div class="colorbar1">&nbsp;</div>-->
+
+<!--<nav>-->
+  <!--<div id="nav_container"-->
+
+  <!--<ul id="menu">-->
+    <!--<li><a href="#"><img src="/images/nav_home.png" width="110" height="70"></a></li>-->
+    <!--<li><a href="#"><img src="/images/nav_about.png" width="110" height="70"></a></li>-->
+    <!--<li><a href="#"><img src="/images/nav_best_cameras.png" width="110" height="70"></a></li>-->
+    <!--<li><a href="#"><img src="/images/nav_reviews.png" width="110" height="70"></a></li>-->
+    <!--<li><a href="#"><img src="/images/nav_forum.png" width="110" height="70"></a></li>-->
+    <!--<li><a href="#"><img src="/images/nav_photo_contest.png" width="110" height="70"></a></li>-->
+  <!--</ul>-->
+
+<!--</nav>&lt;!&ndash;end navigation&ndash;&gt;-->
+
+<!--<div class="colorbar1">&nbsp;</div>-->
+
+<!--<div id="content">-->
+  <!--<div id="content_container">-->
+
+    <!--&lt;!&ndash; 1/3 x 2/3 &ndash;&gt;-->
+    <!--<div class="one_third"></div>-->
+    <!--<div class="resetColumnSet"></div>-->
+
+  <!--</div>-->
+  <!--&lt;!&ndash;end content_container&ndash;&gt;-->
+<!--</div>&lt;!&ndash;end content&ndash;&gt;-->
+
+<!--<footer>-->
+  <!--<div id="footer_container">-->
+
+    <!--&lt;!&ndash; 2/3 x 1/3 &ndash;&gt;-->
+    <!--<div class="two_third"></div>-->
+    <!--<div class="resetColumnSet"></div>-->
+
+  <!--</div>-->
+  <!--&lt;!&ndash;end footer_container&ndash;&gt;-->
+<!--</footer>-->
+

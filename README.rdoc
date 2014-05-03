@@ -5,6 +5,9 @@ the camera being reviewed, a Forum and Photo Contest.
 
 http://warm-ridge-4823.herokuapp.com/
 
+Tracker:
+https://www.pivotaltracker.com/n/projects/1072364
+
 
 == README
 

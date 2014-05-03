@@ -4,57 +4,99 @@
  */
 
 body {
+    background-color: #red;
+}
+
+#header_container,
+#nav_container,
+#content_container,
+#footer_container {
+    width: 980px;
+    margin: auto;
+}
+
+header {
+    background-color: #EFEBDF;
+    overflow: hidden;
+}
+
+#header_logo {
+    float: left;
     background-color: #EFEBDF;
 }
 
-#logo {
-    width: 400px;
-    height: 133px;
+
+nav {
+    background-color: #EFEBDF;
+    overflow: hidden;
 }
 
-#nav_container {
-    list-style-type: none;
+#content {
+    background-color: #EFEBDF;
+    min-height: 600px;
+}
+
+footer {
+    background-color: orange;
+}
+
+.colorbar1 {
+    height: 7px;
+    background-color: #759185;
+}
+
+#photo_home {
+    background-color: #EFEBDF;
+}
+
+#photo_home .photo_container {
+    width: 980px;
+    margin:auto;
 }
 
 
+/* ----- =menu (Primary Nav) ----- */
 
-/* ----- =columns ----- */
-
-.one_third {
-    width: 300px;
-
+#menu {
+    float: right; /* or float: left */
+    margin: 0 3% 0 0;
 }
 
-.one_third_columns {
-    width: 300px;
-    color: #A1C815;
-    font-size: 60px;
-}
-
-.two_third {
-    width: 620px;
-    color: #759185;
-    font-size: 25px;
-}
-
-.full_column {
-    width: 940px;
-}
-
-.side_text {
-    color: #EE845C;
-    font-size: 20px;
-    width: 200px;
-}
-
-.one_third, .two_third, .full_column, .one_third_columns, .side_text{
-    position: relative;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 20px;
+#menu li {
     float: left;
+    list-style: none;
 }
 
-.resetColumnSet {
-    clear: both;
+#menu li a {
+    font-size: 120%;
+    font-weight: bold;
+    color: #58595b;
+    padding: 17px 25px 15px 25px;
+    display: block;
+    text-decoration: none;
 }
+
+#menu li a:hover {
+    color: #fff;
+    background-color: #C5CEBD;
+}
+
+#menu li a:active {
+    background-color:#FF704D;
+}
+
+/*Borders between each button */
+#menu li+li {
+    border-left: 3px solid #759185;
+}
+
+/*Borders on both sides */
+#menu li:first-child a {
+    border-left: 3px solid #759185;
+}
+#menu li:last-child a {
+    border-right: 3px solid #759185;
+}
+
+
+/* List of Responsive Nav */

@@ -11,19 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140425203717) do
+ActiveRecord::Schema.define(version: 0) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "cameras", force: true do |t|
-    t.string   "brand"
-    t.string   "camera_model"
-    t.integer  "price"
-    t.integer  "rating",       default: 0
-    t.text     "sample_image"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
 end

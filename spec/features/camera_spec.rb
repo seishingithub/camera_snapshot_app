@@ -1,24 +1,30 @@
 require 'spec_helper'
 
 feature "Managing Cameras" do
-  scenario "User visits Camera homepage" do
-    visit '/'
+  scenario "a user can create a camera, see it on the list, and delete it" do
+    visit '/cameras/new' # GET new
 
-    expect(page).to have_content "Welcome"
+    fill_in 'Name', with: 'Canon G9'
+    fill_in 'Description', with: 'This is a canon camera'
 
-    #visit('/about')
-    #expect(page).to have_content "About 'The Camera Snapshot'"
-    #
-    #visit('/best_cameras')
-    #expect(page).to have_content "Best Cameras to Buy"
-    #
-    #visit('/reviews')
-    #expect(page).to have_content "Camera Reviews"
-    #
-    #visit('/forum')
-    #expect(page).to have_content "Readers Forum"
-    #
-    #visit('/photo_contest')
-    #expect(page).to have_content "Photo Contest"
+    click_on 'Create Camera' # POST create
+
+    # redirect GET show
+    expect(page).to have_content 'Canon G9'
+    expect(page).to have_content 'This is a canon camera'
+
+    visit '/cameras' # GET index
+    expect(page).to have_content 'Canon G9'
+
+    click_on 'Canon G9' # GET show
+
+    expect(page).to have_content 'Canon G9'
+    expect(page).to have_content 'This is a canon camera'
+
+    click_on 'Delete' # DELETE destroy
+
+    visit '/cameras' # GET index
+
+    expect(page).to have_no_content 'Canon G9'
   end
 end
