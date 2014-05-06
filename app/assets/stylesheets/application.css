@@ -25,7 +25,6 @@ header {
     background-color: #EFEBDF;
 }
 
-
 nav {
     background-color: #EFEBDF;
     overflow: hidden;
@@ -51,9 +50,8 @@ footer {
 
 #photo_home .photo_container {
     width: 980px;
-    margin:auto;
+    margin: auto;
 }
-
 
 /* ----- =menu (Primary Nav) ----- */
 
@@ -82,11 +80,11 @@ footer {
 }
 
 #menu li a:active {
-    background-color:#FF704D;
+    background-color: #FF704D;
 }
 
 /*Borders between each button */
-#menu li+li {
+#menu li + li {
     border-left: 3px solid #759185;
 }
 
@@ -94,9 +92,9 @@ footer {
 #menu li:first-child a {
     border-left: 3px solid #759185;
 }
+
 #menu li:last-child a {
     border-right: 3px solid #759185;
 }
-
 
 /* List of Responsive Nav */
