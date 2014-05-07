@@ -21,6 +21,17 @@ feature "Managing Cameras" do
     expect(page).to have_content 'Canon G9'
     expect(page).to have_content 'This is a Canon camera'
 
+    click_on 'Edit' # EDIT
+    fill_in 'Name', with: 'Fuji FinePix'
+    fill_in 'Description', with: 'This is a Fuji camera'
+    click_on 'Update Camera'
+
+    expect(page).to have_no_content('Canon G9')
+    expect(page).to have_no_content('This is a Canon camera')
+
+    expect(page).to have_content('Fuji FinePix')
+    expect(page).to have_content('This is a Fuji camera')
+
     click_on 'Delete' # DELETE destroy
 
     visit '/cameras' # GET index

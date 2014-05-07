@@ -21,4 +21,16 @@ class CamerasController < ApplicationController
     @camera = Camera.find(params[:id])
   end
 
+  def edit
+    @camera = Camera.find(params[:id])
+  end
+
+  def update
+    @camera = Camera.find(params[:id])
+    @camera.name = params[:camera][:name]
+    @camera.description = params[:camera][:description]
+    @camera.save
+    redirect_to "/cameras/#{@camera.id}"
+  end
+
 end

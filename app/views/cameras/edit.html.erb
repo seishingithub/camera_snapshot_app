@@ -1,0 +1,20 @@
+<h2> Edit Camera </h2>
+
+<form action="/cameras/<%= @camera.id %>" method="post">
+  <input type="hidden" name="_method" value="put" />
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+
+  <p>
+    <label for="camera_name" class="form-label">Camera Name</label>
+    <input name="camera[name]" id="camera_name" value="<%= @camera.name %>">
+  </p>
+
+  <p>
+    <label for="camera_description" class="form-label">Camera Description</label>
+    <input name="camera[description]" id="camera_description" value="<%= @camera.description %>"
+  </p>
+
+  <p>
+    <input type="submit" value="Update Camera" class="form-button">
+  </p>
+</form>

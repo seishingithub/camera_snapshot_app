@@ -4,7 +4,7 @@
  */
 
 body {
-    background-color: #red;
+    background-color: red;
 }
 
 #header_container,
@@ -80,7 +80,7 @@ footer {
 }
 
 #menu li a:active {
-    background-color: #FF704D;
+    background-color: #759185;
 }
 
 /*Borders between each button */

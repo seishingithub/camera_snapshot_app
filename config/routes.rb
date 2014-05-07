@@ -9,6 +9,11 @@ Rails.application.routes.draw do
 
   get '/cameras' => 'cameras#index'
 
+  get '/cameras/:id/edit' => 'cameras#edit'
+
+  put '/cameras/:id' => 'cameras#update'
+
+
 
 end
 
