@@ -9,11 +9,12 @@ class CamerasController < ApplicationController
   end
 
   def create
-    @camera = Camera.new
-    @camera.name = params[:camera][:name]
-    @camera.description = params[:camera][:description]
+    @camera = Camera.new(
+      name: params[:camera][:name],
+      description: params[:camera][:description]
+    )
     @camera.save
-    redirect_to '/cameras'
+    redirect_to '/cameras' # list
   end
 
 
@@ -27,10 +28,18 @@ class CamerasController < ApplicationController
 
   def update
     @camera = Camera.find(params[:id])
-    @camera.name = params[:camera][:name]
-    @camera.description = params[:camera][:description]
+    @camera.update(
+      name: params[:camera][:name],
+      description: params[:camera][:description]
+    )
     @camera.save
     redirect_to "/cameras/#{@camera.id}"
+  end
+
+  def destroy
+    @camera = Camera.find(params[:id])
+    @camera.destroy
+    redirect_to '/cameras'
   end
 
 end

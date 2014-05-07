@@ -1,6 +1,13 @@
-<div class="actions">
-  <a href="/cameras/<%= @camera.id %>/edit">Edit</a>
-</div>
+<form action="/cameras/<%= @camera.id %>/edit" method="get">
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+  <input type="submit" value="Edit">
+</form>
+
+<form action="/cameras/<%= @camera.id %>" method="post">
+  <input type="hidden" name="_method" value="delete" />
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+  <input type="submit" value="Delete">
+</form>
 
 
 <h2> Showing Camera </h2>

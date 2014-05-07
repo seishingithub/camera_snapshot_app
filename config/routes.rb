@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   put '/cameras/:id' => 'cameras#update'
 
+  delete '/cameras/:id' => 'cameras#destroy'
+
 
 
 end

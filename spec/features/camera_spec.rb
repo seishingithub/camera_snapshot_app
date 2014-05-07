@@ -2,6 +2,9 @@ require 'spec_helper'
 
 feature "Managing Cameras" do
   scenario "a user can create a camera, see it on the list, and delete it" do
+    visit '/'
+    click_on 'Reviews'
+    click_on 'Add New Camera'
     visit '/cameras/new' # GET new
 
     fill_in 'Name', with: 'Canon G9'
