@@ -9,7 +9,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_12factor', '~> 0.0.2'
 
 group :development, :test do
@@ -17,4 +17,7 @@ group :development, :test do
   gem 'capybara', '~> 2.2.1'
   gem 'pry'
 end
+
+gem 'rails_12factor', group: :production
+
 
