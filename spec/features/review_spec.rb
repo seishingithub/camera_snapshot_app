@@ -24,6 +24,7 @@ feature 'Managing Camera Reviews' do
     expect(page).to have_content 'G9'
     expect(page).to have_content 'The G9 is an incredibly versatile camera.'
     expect(page).to have_content 'Great for anyone shooting in tough and adverse conditions.'
+    #expect(page).to have_content 'url images taken with camera being reviewed'
   end
 
   scenario 'a user can view a single camera review' do
@@ -33,6 +34,8 @@ feature 'Managing Camera Reviews' do
     expect(page).to have_content 'G9'
     expect(page).to have_content 'The G9 is an incredibly versatile camera.'
     expect(page).to have_content 'Great for anyone shooting in tough and adverse conditions.'
+    #expect(page).to have_content 'url images taken with camera being reviewed'
+
   end
 
   scenario 'a user can edit a camera review' do
@@ -53,6 +56,7 @@ feature 'Managing Camera Reviews' do
     expect(page).to have_content 'FinePix S1'
     expect(page).to have_content 'Fuji continues to excel at what they can do with their compact point-n-shoot reviews.'
     expect(page).to have_content 'The versatility is what gives the Fuji FinePix S1 a reason to be on your radar.'
+    #expect(page).to have_content 'url images taken with camera being reviewed'
   end
 
   scenario 'a user can delete a camera review' do
@@ -63,6 +67,8 @@ feature 'Managing Camera Reviews' do
     expect(page).to have_no_content 'G9'
     expect(page).to have_no_content 'The G9 is an incredibly versatile camera.'
     expect(page).to have_no_content 'Great for anyone shooting in tough and adverse conditions.'
+    #expect(page).to have_no_content 'url images taken with camera being reviewed'
+
   end
 
   scenario 'user cannot enter blank fields when creating a camera review' do
