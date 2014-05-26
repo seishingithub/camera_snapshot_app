@@ -23,6 +23,18 @@ header {
 #header_logo {
     float: left;
     background-color: #EFEBDF;
+    margin-top: 20px;
+}
+
+#header_phrase {
+    float: right;
+    color: #58595b;
+    background-color: #EFEBDF;
+    font-size: 1.468em;
+    line-height: 1.2em;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 10px;
 }
 
 nav {
