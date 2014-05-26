@@ -16,7 +16,7 @@ feature 'Managing Camera Reviews' do
 
   scenario 'a user can visit the index' do
     visit '/'
-    expect(page).to have_content 'Camera Reviews'
+    expect(page).to have_content 'Reviews'
   end
 
   scenario 'a user can create a camera review' do
@@ -42,12 +42,12 @@ feature 'Managing Camera Reviews' do
     expect(page).to have_content 'G9'
     expect(page).to have_content 'The G9 is an incredibly versatile camera.'
     expect(page).to have_content 'Great for anyone shooting in tough and adverse conditions.'
-    click_on 'Update Review'
+    click_on 'Edit This Review'
     fill_in 'review[make]', with: 'Fuji'
     fill_in 'review[model]', with: 'FinePix S1'
     fill_in 'review[camera_review]', with: 'Fuji continues to excel at what they can do with their compact point-n-shoot reviews.'
     fill_in 'review[conclusion]', with: 'The versatility is what gives the Fuji FinePix S1 a reason to be on your radar.'
-    #fill_in 'review[sample_photos]', with: url images taken with camera
+    #fill_in 'review[photos]', with: url images taken with camera
     click_on 'Update Review'
     expect(page).to have_content 'Fuji'
     expect(page).to have_content 'FinePix S1'
@@ -66,6 +66,7 @@ feature 'Managing Camera Reviews' do
   end
 
   scenario 'user cannot enter blank fields when creating a camera review' do
+    pending
     visit '/reviews'
     click_on 'Add New Review'
     click_on 'Save Review'

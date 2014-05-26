@@ -1,0 +1,29 @@
+<h2> Add New Review </h2>
+
+<form action="/reviews" method="post">
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
+
+  <p>
+    <label for="make" class="form_label">Make</label>
+    <input name="review[make]" id="make">
+  </p>
+
+  <p>
+    <label for="model" class="form_label">Model</label>
+    <input name="review[model]" id="model"
+  </p>
+
+  <p>
+    <label for="camera_review" class="form_label">Camera Review</label>
+    <input name="review[camera_review]" id="camera_review">
+  </p>
+
+  <p>
+    <label for="conclusion" class="form_label">Conclusion</label>
+    <input name="review[conclusion]" id="conclusion"
+  </p>
+
+  <p>
+    <input type="submit" value="Save Review" class="form-button">
+  </p>
+</form>
