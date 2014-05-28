@@ -1,6 +1,7 @@
 <h2> Add New Review </h2>
 
 <form action="/reviews" method="post">
+  <!--<form enctype="multipart/form-data" action="http://myserver/abc/upload.php" method="POST">-->
   <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
 
   <p>
@@ -10,7 +11,7 @@
 
   <p>
     <label for="model" class="form_label">Model</label>
-    <input name="review[model]" id="model"
+    <input name="review[model]" id="model">
   </p>
 
   <p>
@@ -20,7 +21,12 @@
 
   <p>
     <label for="conclusion" class="form_label">Conclusion</label>
-    <input name="review[conclusion]" id="conclusion"
+    <input name="review[conclusion]" id="conclusion">
+  </p>
+
+  <p>
+    <label for="sample_photo" class="sample_photo">Sample Photo</label>
+    <input name="review[sample_photo]" id="sample_photo" type="file">
   </p>
 
   <p>
