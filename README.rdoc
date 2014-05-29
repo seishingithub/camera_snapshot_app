@@ -8,4 +8,4 @@ http://warm-ridge-4823.herokuapp.com/
 Tracker:
 https://www.pivotaltracker.com/n/projects/1072364
 
-https://travis-ci.org/seishingithub/camera_snapshot_app.svg?branch=master
+[![Build Status](https://travis-ci.org/seishingithub/camera_snapshot_app.svg?branch=master)](https://travis-ci.org/seishingithub/camera_snapshot_app)
