@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <title>CameraSnapshot</title>
+
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+</head>
+<body>
+<header>
+  <div id="header_container">
+    <div id="header_logo">
+      <a href="<%= root_path %>"><img src="/images/camera_snapshot_logo_no_filmstrip.png" width="125" alt="Logo"/></a>
+    </div>
+    <div id="header_phrase">
+      <p>One-Stop<br>Shop for<br>Digital<br>Camera<br>Information</p>
+    </div>
+    <!--end header_logo-->
+  </div>
+  <!--end header-->
+</header>
+
+<div class="colorbar1">&nbsp;</div>
+
+<nav>
+  <div id="nav_container">
+
+    <ul id="menu">
+      <li><a href="<%= root_path %>">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Best Cameras</a></li>
+      <li><a href="<%= reviews_path %>">Reviews</a></li>
+      <li><a href="#">Forum</a></li>
+      <li><%= link_to "Photo Contest", photo_contest_index_path %></li>
+    </ul>
+  </div>
+  <!--end navigation-->
+</nav>
+
+<div class="colorbar1">&nbsp;</div>
+
+<%= yield %>
+
+</body>
+</html>
