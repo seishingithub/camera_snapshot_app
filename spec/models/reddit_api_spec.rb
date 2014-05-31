@@ -8,5 +8,5 @@ describe RedditApi do
       expect(reddit_api.earth_porn[0]["data"]["url"]).to eq 'https://farm4.staticflickr.com/3717/14124500778_37d8ca6867_o.jpg'
     end
   end
-  
+
 end
