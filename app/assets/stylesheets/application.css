@@ -65,6 +65,15 @@ footer {
     margin: auto;
 }
 
+.photo_contest_container {
+    width: 980px;
+    margin: auto;
+}
+
+.style_image {
+    margin-bottom: 25px;
+}
+
 /* ----- =menu (Primary Nav) ----- */
 
 #menu {

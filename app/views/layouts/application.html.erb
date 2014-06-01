@@ -27,12 +27,11 @@
 
 <nav>
   <div id="nav_container">
-
     <ul id="menu">
       <li><a href="<%= root_path %>">Home</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Best Cameras</a></li>
-      <li><a href="<%= reviews_path %>">Reviews</a></li>
+      <li><%= link_to "Reviews", reviews_path %></li>
       <li><a href="#">Forum</a></li>
       <li><%= link_to "Photo Contest", photo_contest_index_path %></li>
     </ul>
