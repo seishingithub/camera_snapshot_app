@@ -15,9 +15,9 @@
     <div id="header_logo">
       <a href="<%= root_path %>"><img src="/images/camera_snapshot_logo_no_filmstrip.png" width="125" alt="Logo"/></a>
     </div>
-    <div id="header_phrase">
-      <p>One-Stop<br>Shop for<br>Digital<br>Camera<br>Information</p>
-    </div>
+    <!--<div id="header_phrase">-->
+      <!--<p>Digital<br>Camera<br>Reviews<br>Photos<br>& Fun</p>-->
+    <!--</div>-->
     <!--end header_logo-->
   </div>
   <!--end header-->
@@ -25,17 +25,70 @@
 
 <div class="colorbar1">&nbsp;</div>
 
-<nav>
-  <div id="nav_container">
-    <ul id="menu">
-      <li><a href="<%= root_path %>">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Best Cameras</a></li>
-      <li><%= link_to "Reviews", reviews_path %></li>
-      <li><a href="#">Forum</a></li>
-      <li><%= link_to "Photo Contest", photo_contest_index_path %></li>
-    </ul>
+<!--<nav>-->
+  <!--<div id="nav_container">-->
+    <!--<ul id="menu">-->
+      <!--<li><a href="<%#= root_path %>">Home</a></li>-->
+      <!--<li><a href="#">About</a></li>-->
+      <!--<li><a href="#">Best Cameras</a></li>-->
+      <!--<li><%#= link_to "Reviews", reviews_path %></li>-->
+      <!--<li><a href="#">Forum</a></li>-->
+      <!--<li><%#= link_to "Photo Contest", photo_contest_index_path %></li>-->
+    <!--</ul>-->
+  <!--</div>-->
+
+  <!--MAY NEED TO DELETE BELOW HERE:-->
+  <nav>
+    <div id="nav_container">
+  <div class="back">
+    <div class="button_base b05_3d_roll">
+      <div>Home</div>
+      <div>Home</div>
+      <%= link_to "Home", root_path %>
+    </div>
   </div>
+
+  <div class="back">
+    <div class="button_base b05_3d_roll">
+      <div>About</div>
+      <div>About</div>
+    </div>
+  </div>
+
+  <div class="back">
+    <div class="button_base b05_3d_roll">
+      <div>Best Cameras</div>
+      <div>Best Cameras</div>
+    </div>
+  </div>
+
+  <div class="back">
+    <div class="button_base b05_3d_roll">
+      <div>Reviews</div>
+      <div>Reviews</div>
+      <%= link_to "Reviews", reviews_path %>
+    </div>
+  </div>
+
+  <div class="back">
+    <div class="button_base b05_3d_roll">
+      <div>Fun</div>
+      <div>Fun</div>
+    </div>
+  </div>
+
+  <div class="back">
+    <div class="button_base b05_3d_roll">
+      <div>Photos</div>
+      <div>Photos</div>
+      <%= link_to "Photos", photo_contest_index_path %>
+    </div>
+  </div>
+      </div>
+    </nav>
+
+  <!--MAY NEED TO DELETE ABOVE HERE:-->
+
   <!--end navigation-->
 </nav>
 

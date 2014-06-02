@@ -26,16 +26,16 @@ header {
     margin-top: 20px;
 }
 
-#header_phrase {
-    float: right;
-    color: #58595b;
-    background-color: #EFEBDF;
-    font-size: 1.468em;
-    line-height: 1.2em;
-    font-weight: bold;
-    text-align: right;
-    margin-top: 10px;
-}
+/*#header_phrase {*/
+    /*float: right;*/
+    /*color: #58595b;*/
+    /*background-color: #EFEBDF;*/
+    /*font-size: 1.468em;*/
+    /*line-height: 1.2em;*/
+    /*font-weight: bold;*/
+    /*text-align: right;*/
+    /*margin-top: 10px;*/
+/*}*/
 
 nav {
     background-color: #EFEBDF;
@@ -77,7 +77,7 @@ footer {
 /* ----- =menu (Primary Nav) ----- */
 
 #menu {
-    float: right; /* or float: left */
+    /*float: right; *//* or float: left */
     margin: 0 3% 0 0;
 }
 
@@ -110,12 +110,143 @@ footer {
 }
 
 /*Borders on both sides */
-#menu li:first-child a {
-    border-left: 3px solid #759185;
-}
+/*#menu li:first-child a {*/
+    /*border-left: 3px solid #759185;*/
+/*}*/
 
-#menu li:last-child a {
-    border-right: 3px solid #759185;
-}
+/*#menu li:last-child a {*/
+    /*border-right: 3px solid #759185;*/
+/*}*/
 
 /* List of Responsive Nav */
+
+
+/*MAY NEED TO DELETE BELOW HERE:*/
+@import url('http://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+.preserve-3d {
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+body {
+    font-family: Roboto Condensed, sans-serif;
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+}
+
+.back {
+    width: 16%;
+    height: 40px;
+    float: left;
+    background-color: #759185;
+    border: 10px;
+    border-color: #759185;
+    border-style: solid;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    counter-increment: bc;
+    padding: 0px 5px 5px 5px;
+}
+
+.button_base {
+    margin: 0;
+    border: 0;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 75%;
+    position: relative;
+    top: 25%;
+    bottom: 25%;
+    vertical-align: bottom;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -75px;
+    width: 150px;
+    height: 80px;
+    text-align: center;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-user-select: none;
+    cursor: default;
+    /*adding shadow...*/
+    color: #322922;
+    background-color: #d5d5d5;
+    letter-spacing: .05em;
+    text-shadow:
+        .07em .07em 0em #d5d5d5,
+        .07em .07em 0em #322922;
+}
+
+.button_base:hover {
+    cursor: pointer;
+}
+
+
+.b05_3d_roll {
+    perspective: 500px;
+    -webkit-perspective: 500px;
+    -moz-perspective: 500px;
+}
+
+.b05_3d_roll div {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    padding: 12px;
+    pointer-events: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.b05_3d_roll div:nth-child(1) {
+    color: #EFEBDF; /*#000000*/
+    background-color: #C5CEBD; /*#000000*/
+    transform: rotateX(90deg);
+    -webkit-transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transform-origin: 50% 50% -25px;
+    -webkit-transform-origin: 50% 50% -25px;
+    -moz-transform-origin: 50% 50% -25px;
+}
+
+.b05_3d_roll div:nth-child(2) {
+    color: #58595b;
+    background-color: #EFEBDF; /*#ffffff*/
+    transform: rotateX(0deg);
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transform-origin: 50% 50% -25px;
+    -webkit-transform-origin: 50% 50% -25px;
+    -moz-transform-origin: 50% 50% -25px;
+}
+
+.b05_3d_roll:hover div:nth-child(1) {
+    color: #ffffff;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transform: rotateX(0deg);
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+}
+
+.b05_3d_roll:hover div:nth-child(2) {
+    background-color: #58595b;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transform: rotateX(-90deg);
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+}
