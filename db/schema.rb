@@ -11,25 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140525235300) do
+ActiveRecord::Schema.define(version: 20140606184339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "photos", force: true do |t|
-    t.string  "name"
-    t.integer "review_id"
-  end
-
-  add_index "photos", ["review_id"], name: "index_photos_on_review_id", using: :btree
-
-  create_table "reviews", force: true do |t|
-    t.string   "make",          null: false
-    t.string   "model",         null: false
-    t.text     "camera_review", null: false
-    t.text     "conclusion",    null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
 end

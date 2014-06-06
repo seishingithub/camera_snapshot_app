@@ -6,7 +6,7 @@
   <title>CameraSnapshot</title>
 
   <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 
 </head>
 <body>
@@ -16,7 +16,7 @@
       <a href="<%= root_path %>"><img src="/images/camera_snapshot_logo_no_filmstrip.png" width="125" alt="Logo"/></a>
     </div>
     <!--<div id="header_phrase">-->
-      <!--<p>Digital<br>Camera<br>Reviews<br>Photos<br>& Fun</p>-->
+    <!--<p>Digital<br>Camera<br>Reviews<br>Photos<br>& Fun</p>-->
     <!--</div>-->
     <!--end header_logo-->
   </div>
@@ -26,72 +26,47 @@
 <div class="colorbar1">&nbsp;</div>
 
 <!--<nav>-->
-  <!--<div id="nav_container">-->
-    <!--<ul id="menu">-->
-      <!--<li><a href="<%#= root_path %>">Home</a></li>-->
-      <!--<li><a href="#">About</a></li>-->
-      <!--<li><a href="#">Best Cameras</a></li>-->
-      <!--<li><%#= link_to "Reviews", reviews_path %></li>-->
-      <!--<li><a href="#">Forum</a></li>-->
-      <!--<li><%#= link_to "Photo Contest", photo_contest_index_path %></li>-->
-    <!--</ul>-->
-  <!--</div>-->
+<!--<div id="nav_container">-->
+<!--<ul id="menu">-->
+<!--<li><a href="<%#= root_path %>">Home</a></li>-->
+<!--<li><a href="#">About</a></li>-->
+<!--<li><a href="#">Best Cameras</a></li>-->
+<!--<li><%#= link_to "Reviews", reviews_path %></li>-->
+<!--<li><a href="#">Forum</a></li>-->
+<!--<li><%#= link_to "Photo Contest", photo_contest_index_path %></li>-->
+<!--</ul>-->
+<!--</div>-->
 
-  <!--MAY NEED TO DELETE BELOW HERE:-->
-  <nav>
-    <div id="nav_container">
-  <div class="back">
-    <div class="button_base b05_3d_roll">
-      <div>Home</div>
-      <div>Home</div>
-      <%= link_to "Home", root_path %>
-    </div>
-  </div>
-
-  <div class="back">
-    <div class="button_base b05_3d_roll">
-      <div>Photo Select</div>
-      <div>Photo Select</div>
-      <%= link_to "Photo Select", photo_select_path %>
-    </div>
-  </div>
-
-  <div class="back">
-    <div class="button_base b05_3d_roll">
-      <div>Photo Booth</div>
-      <div>Photo Booth</div>
-    </div>
-  </div>
-
-  <div class="back">
-    <div class="button_base b05_3d_roll">
-      <div>Photo FX</div>
-      <div>Photo FX</div>
-      <%= link_to "Reviews", reviews_path %>
-    </div>
-  </div>
-
-  <div class="back">
-    <div class="button_base b05_3d_roll">
-      <div>eCards</div>
-      <div>eCards</div>
-    </div>
-  </div>
-
-  <div class="back">
-    <div class="button_base b05_3d_roll">
-      <div>Prints</div>
-      <div>Prints</div>
-      <%= link_to "Photos", photo_contest_index_path %>
-    </div>
-  </div>
+<!--MAY NEED TO DELETE BELOW HERE:-->
+<nav>
+  <div id="nav_container">
+    <div class="back">
+      <div class="button_base b05_3d_roll">
+        <div>Home</div>
+        <div>Home</div>
+        <%= link_to "Home", root_path %>
       </div>
-    </nav>
+    </div>
 
-  <!--MAY NEED TO DELETE ABOVE HERE:-->
+    <div class="back">
+      <div class="button_base b05_3d_roll">
+        <div>Photo Select</div>
+        <div>Photo Select</div>
+        <%= link_to "Photo Select", photo_select_index_path %>
+      </div>
+    </div>
 
-  <!--end navigation-->
-</nav>
+    <div class="back">
+      <div class="button_base b05_3d_roll">
+        <div>eCards</div>
+        <div>eCards</div>
+      </div>
+    </div>
+
+  </div>
+</nav><!--end navigation-->
+
+<!--MAY NEED TO DELETE ABOVE HERE:-->
 
 <div class="colorbar1">&nbsp;</div>
 
