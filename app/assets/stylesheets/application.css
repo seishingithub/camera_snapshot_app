@@ -12,7 +12,7 @@ body {
 #content_container,
 #footer_container,
 #pixlr_container {
-    width: 980px;
+    width: 960px;
     margin: auto;
 }
 
@@ -37,6 +37,8 @@ header {
     /*text-align: right;*/
     /*margin-top: 10px;*/
 /*}*/
+
+
 
 nav {
     background-color: #EFEBDF;
