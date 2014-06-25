@@ -9,4 +9,16 @@ describe RedditApi do
     end
   end
 
+  it 'should return .jpg and .png images (excluding imgur)' do
+    VCR.use_cassette('models/earth_porn') do
+      reddit_api = RedditApi.new
+      response = reddit_api.earth_porn
+
+      image_links = response.collect { |earth_porn_data| earth_porn_data["data"]["url"] }
+
+      image_links.each do |link|
+        expect(link.include?(".jpg") || link.include?(".png")).to eq true
+      end
+    end
+  end
 end
