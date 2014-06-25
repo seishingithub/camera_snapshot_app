@@ -8,11 +8,16 @@
 
     </div>
     <div class="one_third">
-      <div class="CreateCardLink">
-      <%= link_to "Create a Card", new_ecard_path %>
+      <div class="CreateCardButton">
+      <%= link_to "Create a Card", ecards_path %>
+        <a href="<%= ecards_path %>" class="button green">
+          Choose This<br>Image
+        </a>
       </div>
     </div>
   </div>
 <% end %>
 
 <div class="resetColumnSet"></div>
+
+

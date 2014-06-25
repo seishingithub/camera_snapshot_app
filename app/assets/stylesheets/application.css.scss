@@ -3,6 +3,8 @@
  *= require_self
  */
 
+@import "compass";
+
 body {
     background-color: #EFEBDF;
 }
@@ -57,6 +59,17 @@ footer {
 .colorbar1 {
     height: 7px;
     background-color: #759185;
+
+    /*color: #a2d3e9;*/
+    /*color: #7abedf;*/
+    /*color: #6fadcb;*/
+    /*color: #54809d;*/
+
+    /*color: #a0b3ab;*/
+    /*color: #91a89e;*/
+    /*color: #839c92;*/
+    /*color: #759185;*/
+
 }
 
 #photo_home {
@@ -64,18 +77,67 @@ footer {
 }
 
 #photo_home .photo_container {
-    width: 980px;
+    width: 960px;
     margin: auto;
 }
 
 .nature_photos_container {
-    width: 980px;
+    width: 960px;
+    height: 490px;
     margin: auto;
+    border: 1px solid black;
 }
 
 .style_image {
     margin-bottom: 25px;
 }
+
+.ecard_page {
+    margin-left: 50px;
+    margin-top: 40px;
+}
+
+/*.one_third {*/
+    /*width:300px;*/
+/*}*/
+
+/*COLUMNS*/
+.one_third {
+    width:300px;
+    border: 1px solid black;
+    float: right;
+}
+
+.two_third {
+    width:620px;
+    height: 400px;
+    border: 1px solid black;
+    float:left;
+}
+
+/*MAY NEED TO DELETE BELOW HERE */
+.CreateCardLink {
+    background-color: red;
+}
+
+
+
+
+
+
+
+
+
+
+/*MAY NEED TO DELETE ABOVE HERE*/
+
+
+
+
+
+
+
+
 
 /* ----- =menu (Primary Nav) ----- */
 
