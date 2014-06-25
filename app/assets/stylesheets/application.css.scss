@@ -59,17 +59,6 @@ footer {
 .colorbar1 {
     height: 7px;
     background-color: #759185;
-
-    /*color: #a2d3e9;*/
-    /*color: #7abedf;*/
-    /*color: #6fadcb;*/
-    /*color: #54809d;*/
-
-    /*color: #a0b3ab;*/
-    /*color: #91a89e;*/
-    /*color: #839c92;*/
-    /*color: #759185;*/
-
 }
 
 #photo_home {
@@ -77,15 +66,17 @@ footer {
 }
 
 #photo_home .photo_container {
-    width: 960px;
-    margin: auto;
+      width: 960px;
+      margin: auto;
 }
 
 .nature_photos_container {
     width: 960px;
-    height: 490px;
+    height: 600px;
     margin: auto;
-    border: 1px solid black;
+    border: 1px solid lightgray;
+    margin-bottom: 25px;
+    position: relative;
 }
 
 .style_image {
@@ -102,42 +93,13 @@ footer {
 /*}*/
 
 /*COLUMNS*/
-.one_third {
-    width:300px;
-    border: 1px solid black;
-    float: right;
-}
 
-.two_third {
-    width:620px;
-    height: 400px;
-    border: 1px solid black;
-    float:left;
-}
-
-/*MAY NEED TO DELETE BELOW HERE */
-.CreateCardLink {
-    background-color: red;
-}
-
-
-
-
-
-
-
-
-
-
-/*MAY NEED TO DELETE ABOVE HERE*/
-
-
-
-
-
-
-
-
+//.two_third {
+//    width:620px;
+//    height: 400px;
+//    border: 1px solid gray;
+//    float:left;
+//}
 
 /* ----- =menu (Primary Nav) ----- */
 

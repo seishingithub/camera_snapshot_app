@@ -1,20 +1,12 @@
 <!--  2/3 x 1/3 -->
-
 <% @earth_porn.each do |post| %>
   <div class="nature_photos_container">
-    <div class="two_third">
       <%= image_tag(post["data"]["url"], :class => "style_image", width: "100%", height: "100%") %>
       <!--<%#= image_tag(post["data"]["url"], :class => "style_image", size: "320x163") %>-->
-
-    </div>
-    <div class="one_third">
-      <div class="CreateCardButton">
-      <%= link_to "Create a Card", ecards_path %>
         <a href="<%= ecards_path %>" class="button green">
-          Choose This<br>Image
+          <!--Choose This<br>Image-->
+          Create Card<br>With This Image
         </a>
-      </div>
-    </div>
   </div>
 <% end %>
 

@@ -9,7 +9,9 @@
   text-shadow: -2px 2px 0 rgba(black, 0.2);
   font-weight: bold;
   padding-right: 50px;
-  margin: 10px;
+  margin: 23px 0 0 747px;
+  position: absolute;
+  top: 0;
   &.green {
     @include background(linear-gradient(
         top, #a0b3ab, #91a89e
