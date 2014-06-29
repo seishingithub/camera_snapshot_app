@@ -1,7 +1,8 @@
 SITE DESCRIPTION:
-'The Camera Snapshot -- Your One-Stop Shop for Digital Camera Information'
-The site would provide listings of Best Cameras to buy, Camera Reviews including images taken with
-the camera being reviewed, a Forum and Photo Contest.
+'The Camera Snapshot'
+The site will allow users to choose an image from selection provided by subreddit API.
+Image can then be emailed as ecard to designated recipient.
+
 
 http://warm-ridge-4823.herokuapp.com/
 
