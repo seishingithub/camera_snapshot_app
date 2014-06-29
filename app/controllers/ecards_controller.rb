@@ -7,4 +7,6 @@ class EcardsController < ApplicationController
   def new
     @ecard = Ecard.new
   end
+
+
 end
