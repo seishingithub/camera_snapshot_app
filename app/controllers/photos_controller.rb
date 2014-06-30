@@ -1,7 +1,7 @@
-class EcardsController < ApplicationController
+class PhotosController < ApplicationController
 
   #def index
-  #  @ecards = Ecard.all
+  #  @photos = Ecard.all
   #end
   #
   #def new
