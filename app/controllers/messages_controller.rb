@@ -1,12 +1,12 @@
-class Messages < ApplicationController
+class MessagesController < ApplicationController
 
-  def new(photo)
-    @photo = photo
-    @message = Message.new
+  def index
+
   end
 
-  def create
-
+  def new #(photo)
+    #@photo = photo
+    @message = Message.new
   end
 
 end
