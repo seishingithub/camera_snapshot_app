@@ -11,30 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140630231005) do
+ActiveRecord::Schema.define(version: 20140703014706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "messages", force: true do |t|
-    t.string "recipient_name"
-    t.string "recipient_email"
-    t.string "sender_name"
-    t.string "sender_email"
-    t.text   "message"
-  end
-
-  create_table "photos", force: true do |t|
-    t.text     "text"
-    t.string   "picture"
+    t.string   "recipient_name"
+    t.string   "recipient_email"
+    t.string   "sender_name"
+    t.string   "sender_email"
+    t.text     "message"
+    t.integer  "photo_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "photos", force: true do |t|
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "filename"
+  end
+
   create_table "users", force: true do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email_address"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email_address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
