@@ -70,14 +70,36 @@ footer {
       margin: auto;
 }
 
-.nature_photos_container,
-.ecard_page {
+.nature_photos_container {
     width: 960px;
     height: 600px;
     margin: auto;
     border: 1px solid lightgray;
     margin-bottom: 25px;
     position: relative;
+}
+
+.ecard_page {
+  width: 768px;// (960 / 5) * 4
+  height: 600px; // need to change to (480 / 5) * 4 ??
+  margin: auto;
+  border: 1px solid lightgray;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.messages_subtitle {
+  font-size: 0.9em;
+  font-weight: normal;
+  vertical-align: text-bottom;
+}
+
+.form_text_field_width {
+
+}
+
+.form_text_box_size {
+
 }
 
 .style_image {

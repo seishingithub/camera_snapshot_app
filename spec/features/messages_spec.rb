@@ -71,4 +71,4 @@
 #    click_on 'Cancel'
 #    expect(page).to have_content 'Photo Select' #BACK TO PHOTOSELECT INDEX
 #  end
-#end
+end

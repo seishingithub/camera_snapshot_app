@@ -1,3 +1,36 @@
+<!--Do I want to add a 96px lt green border on each side to arrive at width of 960px?-->
 <div class="ecard_page">
-  <p>Choose a photo to put on your eCard</p>
+
+  <h1>Send eCard</h1>
+
+  <%= form_for @message do |f| %>
+    <div class="form_text_field_width">
+      <p>
+        <%= f.label :your_name %><br>
+        <%= f.text_field :sender_name %>
+      </p>
+
+      <p>
+        <%= f.label :recipient_name %>
+        <span class="messages_subtitle"> (required)</span><br>
+        <%= f.text_field :recipient_name %>
+      </p>
+
+      <p>
+        <%= f.label :recipient_email %><br>
+        <%= f.text_field :recipient_email %>
+      </p>
+    </div>
+    <div class="form_text_box_size">
+      <p>
+        <%= f.label :message %>
+        <span class="messages_subtitle">  (required)</span><br>
+        <%= f.text_field :message %>
+      </p>
+    </div>
+
+    <p>
+      <%= f.submit 'Preview' %>
+  <% end %>
+  </p>
 </div>
