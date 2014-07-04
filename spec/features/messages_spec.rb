@@ -29,13 +29,16 @@ feature 'Managing Form for Sending eCard' do
     click_on 'Preview'
     expect(page).to have_content 'Hi John Doe! Peggy (peggy@example.com) has sent you an eCard:'
     expect(page).to have_content 'I thought you\'d like this card'
-    # fill_in 'Your name', with: 'Peggy Sue'
-    # fill_in 'Your email address', with: 'peggysue@example.com' # Required
-    # fill_in 'Recipient name', with: 'John Boy'
-    # fill_in 'Recipient email', with: 'johnboy@example.com' # Required
-    # fill_in 'Message', with: 'I really thought you would like this card' # Required
-    # click_on 'Preview'
-    # expect(page).to have_content 'Hi John Boy! Peggy Sue (peggysue@example.com) has sent you an eCard:'
+    click_on 'Edit'
+    # MAYBE DELETE BELOW
+    fill_in 'Sender name', with: 'Peggy Sue'
+    fill_in 'Sender email', with: 'peggysue@example.com' # Required
+    fill_in 'Recipient name', with: 'John Boy'
+    fill_in 'Recipient email', with: 'johnboy@example.com' # Required
+    fill_in 'Message', with: 'I really thought you would like this card' # Required
+    click_on 'Preview' # Presently, this is link reloading messages/new. Need to redirect & retain fields
+    expect(page).to have_content 'Hi John Boy! Peggy Sue (peggysue@example.com) has sent you an eCard:'
+    # MAYBE DELETE ABOVE
     VCR.use_cassette('features/photo_select/show') do
       click_on 'Send'
       # expect(ActionMailer::Base.deliveries.length).to eq 1

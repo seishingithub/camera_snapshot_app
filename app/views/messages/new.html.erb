@@ -1,5 +1,5 @@
 <!--Do I want to add a 96px lt green border on each side to arrive at width of 960px?-->
-  <div class="ecard_page">
+<div class="ecard_page" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 
   <h1>Send eCard</h1>
 
@@ -27,6 +27,7 @@
         <%= f.text_field :recipient_email, :class=> "message_text_field" %>
       </p>
     </div>
+      <!--<textarea class="commentbox">-->
     <div class="form_text_box_size">
       <p>
         <%= f.label :message, :class=> "message_label" %>
@@ -34,6 +35,8 @@
         <%= f.text_field :message, :class=> "message_text_box" %>
       </p>
     </div>
+      <!--</textarea>-->
+
 
     <p>
       <%= f.submit 'Preview', :class=> "btn-preview" %>
