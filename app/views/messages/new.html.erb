@@ -1,5 +1,5 @@
 <!--Do I want to add a 96px lt green border on each side to arrive at width of 960px?-->
-<div class="ecard_page">
+  <div class="ecard_page">
 
   <h1>Send eCard</h1>
 
@@ -7,34 +7,36 @@
     <div class="form_text_field_width">
       <p>
         <%= f.label :sender_name %><br>
-        <%= f.text_field :sender_name %>
+        <%= f.text_field :sender_name, :class=> "message_text_field"  %>
       </p>
       <p>
         <%= f.label :sender_email %>
         <span class="messages_subtitle">  (required)</span><br>
-        <%= f.text_field :sender_email %>
+        <%= f.text_field :sender_email, :class=> "message_text_field"  %>
       </p>
       <p>
         <%= f.label :recipient_name %><br>
-        <%= f.text_field :recipient_name %>
+        <%= f.text_field :recipient_name, :class=> "message_text_field"  %>
       </p>
 
       <p>
         <%= f.label :recipient_email %>
         <span class="messages_subtitle">  (required)</span><br>
-        <%= f.text_field :recipient_email %>
+        <%= f.text_field :recipient_email, :class=> "message_text_field" %>
       </p>
     </div>
     <div class="form_text_box_size">
       <p>
         <%= f.label :message %>
         <span class="messages_subtitle">  (required)</span><br>
-        <%= f.text_field :message %>
+        <%= f.text_field :message, :class=> "message_text_box" %>
       </p>
     </div>
 
     <p>
-      <%= f.submit 'Preview' %>
+      <%= f.submit 'Preview', :class=> "btn-preview" %>
+      <%= f.submit 'Send', :class=> "btn-preview" %>
+      <%= f.submit 'Cancel', :class=> "btn-preview" %>
   <% end %>
   </p>
 </div>
