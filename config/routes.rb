@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   resources :photo_select
   resources :photos
   resources :users
-  resources :messages
+  resources :messages do
+    member do
+      get 'preview'
+      get 'deliver'
+    end
+  end
 end
 

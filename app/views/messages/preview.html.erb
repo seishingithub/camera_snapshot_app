@@ -1,0 +1,4 @@
+<h3>Hi <%= @message.recipient_name %>! <%= @message.sender_name %> (<%= @message.sender_email%>) has sent you an eCard:'</h3><br>
+<h3><%= @message.message %></h3>
+
+<a href="<%= deliver_message_path(@message) %>">Send</a>

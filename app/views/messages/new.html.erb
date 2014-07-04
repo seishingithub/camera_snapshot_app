@@ -6,18 +6,22 @@
   <%= form_for @message do |f| %>
     <div class="form_text_field_width">
       <p>
-        <%= f.label :your_name %><br>
+        <%= f.label :sender_name %><br>
         <%= f.text_field :sender_name %>
       </p>
-
       <p>
-        <%= f.label :recipient_name %>
-        <span class="messages_subtitle"> (required)</span><br>
+        <%= f.label :sender_email %>
+        <span class="messages_subtitle">  (required)</span><br>
+        <%= f.text_field :sender_email %>
+      </p>
+      <p>
+        <%= f.label :recipient_name %><br>
         <%= f.text_field :recipient_name %>
       </p>
 
       <p>
-        <%= f.label :recipient_email %><br>
+        <%= f.label :recipient_email %>
+        <span class="messages_subtitle">  (required)</span><br>
         <%= f.text_field :recipient_email %>
       </p>
     </div>
