@@ -13,12 +13,33 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
   end
 
+  # DOUBLE-CHECK BEFORE DELETING
+  # def create
+  #   @message = Message.create(message_params)
+  #   if @message.save
+  #
+  #     redirect_to preview_message_path(@message)
+  #   else
+  #     render new_message_path
+  #   end
+  # end
+
   def create
     @message = Message.create(message_params)
     if @message.save
-      redirect_to preview_message_path(@message)
-    else
-      render new_message_path
+      if params[:commit] == 'Preview'
+        redirect_to preview_message_path(@message)
+      elsif params[:commit] == 'Send'
+        # NEED TO CREATE VIEW PAGE FOR SENT MESSAGE
+        # PRESENTLY ROUTING TO PREVIEW PAGE
+        # 'YOUR CARD WAS SUCCESSFULLY SENT WITH THE
+        # FOLLOWING MESSAGE:' (RESEMBLE PREVIEW PAGE)
+        redirect_to preview_message_path(@message)
+      elsif params[:commit] == 'Cancel'
+        redirect_to photo_select_index_path
+      else
+        render new_message_path
+      end
     end
   end
 
