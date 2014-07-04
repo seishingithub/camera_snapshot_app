@@ -80,11 +80,6 @@
 
 //may have to delete below here
 
-body {
-  background: #dbe6dd;
-  text-align: center;
-  -webkit-transform: translateZ(0);
-}
 
 .btn-preview {
   background-color: #91a89e;
@@ -109,16 +104,16 @@ body {
   font-family: "Lucida Grande", Arial, sans-serif;
   font-size: 22px;
   font-weight: bold;
-  height: 61px;
+  height: 50px;
   letter-spacing: -1px;
-  line-height: 61px;
+  line-height: 40px;
   margin: 30px 0 10px;
   position: relative;
   text-align: center;
   text-shadow: 0 1px 1px rgba(black, 0.5);
   text-decoration: none !important;
   top: 0;
-  width: 186px;
+  width: 150px;
   @include transition(0.15s);
   &:hover, &:focus {
     background-color: #759185;
