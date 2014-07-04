@@ -81,34 +81,42 @@ footer {
 
 .ecard_page {
   width: 768px;// (960 / 5) * 4
-height: 1768px; // need to change to (480 / 5) * 4 ??  600px?
-  margin: auto;
+  height: 1768px; // need to change to (480 / 5) * 4 ??  600px?
+  margin: 0 auto;
   border: 1px solid lightgray;
   margin-bottom: 25px;
   position: relative;
   color: #58595b;
+  text-align: center;
 }
 
 .messages_subtitle {
   font-size: 0.9em;
   font-weight: normal;
   vertical-align: text-bottom;
+  color: #BB383E;
 }
 
 .form_text_field_width {
   color: #58595b;
   font-weight: bold;
+  text-align: center;
 }
 
 .form_text_box_size {
   color: #58595b;
   font-weight: bold;
 
+
 }
 
 .message_text_box {
   width: 450px;
   height: 225px;
+}
+
+.message_label {
+  text-align: left;
 }
 
 .message_text_field {

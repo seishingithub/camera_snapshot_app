@@ -3,31 +3,33 @@
 
   <h1>Send eCard</h1>
 
+  INSERT PHOTO HERE
+
   <%= form_for @message do |f| %>
     <div class="form_text_field_width">
       <p>
-        <%= f.label :sender_name %><br>
+        <%= f.label :sender_name, :class=> "message_label" %><br>
         <%= f.text_field :sender_name, :class=> "message_text_field"  %>
       </p>
       <p>
-        <%= f.label :sender_email %>
+        <%= f.label :sender_email, :class=> "message_label" %>
         <span class="messages_subtitle">  (required)</span><br>
         <%= f.text_field :sender_email, :class=> "message_text_field"  %>
       </p>
       <p>
-        <%= f.label :recipient_name %><br>
+        <%= f.label :recipient_name, :class=> "message_label" %><br>
         <%= f.text_field :recipient_name, :class=> "message_text_field"  %>
       </p>
 
       <p>
-        <%= f.label :recipient_email %>
+        <%= f.label :recipient_email, :class=> "message_label" %>
         <span class="messages_subtitle">  (required)</span><br>
         <%= f.text_field :recipient_email, :class=> "message_text_field" %>
       </p>
     </div>
     <div class="form_text_box_size">
       <p>
-        <%= f.label :message %>
+        <%= f.label :message, :class=> "message_label" %>
         <span class="messages_subtitle">  (required)</span><br>
         <%= f.text_field :message, :class=> "message_text_box" %>
       </p>
