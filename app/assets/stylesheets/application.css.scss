@@ -102,7 +102,6 @@ footer {
   color: #58595b;
   font-weight: bold;
   text-align: center; //associated with Sender:name, email, Recip:name,email fields
-//  *********
 }
 
 
@@ -114,6 +113,7 @@ footer {
 .message_text_box {
   width: 450px;
   height: 225px;
+  padding: 4px;
 }
 
 .message_label {
@@ -123,6 +123,7 @@ footer {
 .message_text_field {
   width: 450px;
   height: 1.5em;
+  padding: 4px;
 }
 
 .style_image {
