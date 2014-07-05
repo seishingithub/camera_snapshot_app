@@ -27,17 +27,13 @@
         <%= f.text_field :recipient_email, :class=> "message_text_field" %>
       </p>
     </div>
-      <!--<textarea class="commentbox">-->
     <div class="form_text_box_size">
       <p>
         <%= f.label :message, :class=> "message_label" %>
         <span class="messages_subtitle">  (required)</span><br>
-        <%= f.text_field :message, :class=> "message_text_box" %>
+        <%= f.text_area :message, :class=> "message_text_box" %>
       </p>
     </div>
-      <!--</textarea>-->
-
-
     <p>
       <%= f.submit 'Preview', :class=> "btn-preview" %>
       <%= f.submit 'Send', :class=> "btn-preview" %>

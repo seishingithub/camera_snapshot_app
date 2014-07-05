@@ -87,7 +87,8 @@ footer {
   margin-bottom: 25px;
   position: relative;
   color: #58595b;
-  text-align: center;
+  text-align: center; //on messages/new, connected to 'insert photo here'
+  // and 'Message (required)' Text Box
 }
 
 .messages_subtitle {
@@ -100,8 +101,10 @@ footer {
 .form_text_field_width {
   color: #58595b;
   font-weight: bold;
-  text-align: center;
+  text-align: center; //associated with Sender:name, email, Recip:name,email fields
+//  *********
 }
+
 
 .form_text_box_size {
   color: #58595b;
@@ -114,7 +117,7 @@ footer {
 }
 
 .message_label {
-  text-align: left;
+//  text-align: left;
 }
 
 .message_text_field {
