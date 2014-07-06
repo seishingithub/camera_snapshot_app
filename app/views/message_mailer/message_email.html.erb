@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<h1>Hi <%= @message.recipient_name %></h1>
+<p>
+  You have received an ecard from <%= @message.sender_name %>:<br>
+</p>
+<p>
+  <%= @message.message %>
+</p>
+<p>We hope you enjoyed the card and have a great day!</p>
+</body>
+</html>
+

@@ -24,9 +24,11 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.14.2'
   gem 'capybara', '~> 2.2.1'
   gem 'pry'
+  gem 'dotenv-rails'
 end
 
 group :production do
   gem 'rails_12factor', '~> 0.0.2'
 end
+
 

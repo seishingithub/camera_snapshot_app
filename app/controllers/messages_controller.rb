@@ -30,6 +30,7 @@ class MessagesController < ApplicationController
       if params[:commit] == 'Preview'
         redirect_to preview_message_path(@message)
       elsif params[:commit] == 'Send'
+        MessageMailer.message_email(@message).deliver
         # NEED TO CREATE VIEW PAGE FOR SENT MESSAGE
         # PRESENTLY ROUTING TO PREVIEW PAGE
         # 'YOUR CARD WAS SUCCESSFULLY SENT WITH THE

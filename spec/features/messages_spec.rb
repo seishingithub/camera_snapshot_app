@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'Managing Form for Sending eCard' do
-#
+#  NEED TO ADD SPEC TO MAKE SURE PHOTO IS INCLUDED...?
 #  scenario 'a user can send an eCard without first previewing the eCard (without User Auth)' do
 #    visit '/'
 #    click_on 'ECards'
