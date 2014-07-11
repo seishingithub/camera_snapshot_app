@@ -3,14 +3,11 @@
 
   <h1>Send eCard</h1>
 
-  INSERT PHOTO HERE
-  <%= @photo %>
-
-  <!--<#% if @message.photo_id.present? %>-->
-    <!--<div class="message_photo">-->
-      <!--<img src='<#%= @message.photo_id %>'>-->
-    <!--</div>-->
-  <!--<#% end %>-->
+  <% if @photo.present? %>
+    <div class="message_photo">
+      <img src='<%= @photo %>'>
+    </div>
+  <% end %>
 
   <%= form_for @message do |f| %>
     <div class="form_text_field_width">
@@ -33,6 +30,7 @@
       </p>
     </div>
     <p>
+      <%= hidden_field_tag 'photo', @photo %>
       <%= f.submit 'Preview', :class=> "btn-preview" %>
       <%= f.submit 'Send', :class=> "btn-preview" %>
       <%= f.submit 'Cancel', :class=> "btn-preview" %>

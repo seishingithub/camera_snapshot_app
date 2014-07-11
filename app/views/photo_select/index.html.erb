@@ -3,7 +3,7 @@
   <div class="nature_photos_container">
       <%= image_tag(post["data"]["url"], :class => "style_image", width: "100%", height: "100%") %>
       <!--<%#= image_tag(post["data"]["url"], :class => "style_image", size: "320x163") %>-->
-        <a href="<%= new_message_path %>" class="button green">
+        <a href="<%= new_message_path(:photo => post['data']['url']) %>" class="button green">
           Create e-Card<br>With This Image
         </a>
   </div>

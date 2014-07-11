@@ -1,22 +1,23 @@
 require 'spec_helper'
 
 feature 'Managing Form for Sending eCard' do
-#  NEED TO ADD SPEC TO MAKE SURE PHOTO IS INCLUDED...?
-#  scenario 'a user can send an eCard without first previewing the eCard (without User Auth)' do
-#    visit '/'
-#    click_on 'ECards'
-#    expect(page).to have_content 'Send eCard'
-#    # NEED TO CONNECT TO CLICK-ON EVENT TO GET TO THE NEXT PAGE
-#    fill_in 'Your name', with: 'Peggy Griffin'
-#    fill_in 'Your email  (required)', with: 'peggy@example.com' # Required
-#    fill_in 'Recipient name', with: 'John Doe'
-#    fill_in 'Recipient email  (required)', with: 'john@example.com' # Required
-#    fill_in 'Type your message here (required)', with: 'I thought you\'d like this card' # Required
-#    click_on 'Send'
-#    expect(page).to have_content 'eCard sent successfully'
-#  end
-#
+#NEED TO ADD SPEC TO MAKE SURE PHOTO IS INCLUDED...?
+  scenario 'a user can send an eCard without first previewing the eCard (without User Auth)' do
+    visit '/'
+    click_on 'ECards'
+    expect(page).to have_content 'Send eCard'
+    # NEED TO CONNECT TO CLICK-ON EVENT TO GET TO THE NEXT PAGE
+    fill_in 'Your name', with: 'Peggy Griffin'
+    fill_in 'Your email  (required)', with: 'peggy@example.com' # Required
+    fill_in 'Recipient name', with: 'John Doe'
+    fill_in 'Recipient email  (required)', with: 'john@example.com' # Required
+    fill_in 'Type your message here (required)', with: 'I thought you\'d like this card' # Required
+    click_on 'Send'
+    expect(page).to have_content 'eCard sent successfully'
+  end
+
   scenario 'a user can preview, edit and send an eCard (without User Auth)' do
+    ActionMailer::Base.deliveries = []
     expect(ActionMailer::Base.deliveries.length).to eq 0
     visit '/'
     click_on 'ECards'

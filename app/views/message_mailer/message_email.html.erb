@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+  <style type="text/css">
+    #photo img {
+      width: 550px;
+    }
+  </style>
 </head>
 <body>
-<h1>Hi <%= @message.recipient_name %></h1>
-<p>
-  You have received an ecard from <%= @message.sender_name %>:<br>
-</p>
-<p>
-  <%= @message.message %>
-</p>
-<p>We hope you enjoyed the card and have a great day!</p>
+<div class="message_email_page" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+  <p>Hi <%= @message.recipient_name %>!</p>
+  You have received an ecard from <%= @message.sender_name %> at <%= @message.sender_email %>:<br>
+
+  <p><%= @message.message %></p>
+
+  <div id="photo">
+    <img src="<%= @photo %>">
+  </div>
+
+  <p>We hope you enjoyed the card and have a great day!</p>
+
+  <p>
+
+  </p>
+</div>
 </body>
 </html>
 

@@ -4,8 +4,8 @@ class MessagesController < ApplicationController
 
   end
 
-  def new #(photo)
-    #@photo = photo
+  def new
+    @photo = params[:photo]
     @message = Message.new
   end
 
@@ -26,11 +26,12 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.create(message_params)
+    @photo = params[:photo]
     if @message.save
       if params[:commit] == 'Preview'
         redirect_to preview_message_path(@message)
       elsif params[:commit] == 'Send'
-        MessageMailer.message_email(@message).deliver
+        MessageMailer.message_email(@message, @photo).deliver
         # NEED TO CREATE VIEW PAGE FOR SENT MESSAGE
         # PRESENTLY ROUTING TO PREVIEW PAGE
         # 'YOUR CARD WAS SUCCESSFULLY SENT WITH THE
