@@ -91,6 +91,18 @@ footer {
   // and 'Message (required)' Text Box
 }
 
+.message_email_page, .message_preview_page {
+  width: 768px;// (960 / 5) * 4
+  height: 1768px; // need to change to (480 / 5) * 4 ??  600px?
+  margin: 0 auto;
+  border: 1px solid lightgray;
+  margin-bottom: 25px;
+  position: relative;
+  color: #58595b;
+  text-align: left; //on messages/new, connected to 'insert photo here'
+  // and 'Message (required)' Text Box
+}
+
 .messages_subtitle {
   font-size: 0.9em;
   font-weight: normal;
