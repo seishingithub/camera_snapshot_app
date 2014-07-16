@@ -111,7 +111,14 @@ footer {
 }
 
 .message_photo img {
-  width: 500px;
+  width: 768px;
+  height: 480px;
+  margin: 0 auto;
+  border: 1px solid lightgray;
+  margin-bottom: 25px;
+  position: relative;
+  color: #58595b;
+  text-align: left;
 }
 
 .form_text_field_width {

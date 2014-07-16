@@ -3,8 +3,15 @@
 <head>
   <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
   <style type="text/css">
-    #photo img {
-      width: 550px;
+    .message_photo img {
+      width: 768px;
+      height: 480px;
+      margin: 0 auto;
+      border: 1px solid lightgray;
+      margin-bottom: 25px;
+      position: relative;
+      color: #58595b;
+      text-align: left;
     }
   </style>
 </head>
@@ -14,11 +21,15 @@
   <p>Hi <%= @message.recipient_name %>!</p>
   You have received an ecard from <%= @message.sender_name %> at <%= @message.sender_email %>:<br>
 
-  <p><%= @message.message %></p>
-
   <div id="photo">
-    <img src="<%= @photo %>">
+
   </div>
+
+
+      <div><img src="<%= @photo %>" style="width: 768px; margin: 0 auto; margin-bottom: 25px"></div>
+
+
+  <p><%= @message.message %></p>
 
   <p>We hope you enjoyed the card and have a great day!</p>
 
@@ -28,4 +39,6 @@
 </div>
 </body>
 </html>
+
+
 
