@@ -8,14 +8,15 @@
   <tr>
     <td>
       Hi <%= @message.recipient_name %>!<br>
-      You have received an ecard from <%= @message.sender_name %> at <%= @message.sender_email %>:<br>
+      <p>You have received an ecard from <%= @message.sender_name %> at <%= @message.sender_email %>.<br>
+      We hope you enjoy the card and have a great day!</p><br>
     </td>
   </tr>
   <tr>
     <table style="border: 1px double #759185;">
       <tr>
         <td>
-          <img src="<%= @photo %>" style="width: 768px; height: 480px; margin: 0 auto; margin-bottom: 25px"><br>
+          <img src="<%= @photo %>" style="width: 768px; max-height: 480px; margin: 0 auto; margin-bottom: 25px"><br>
         </td>
       </tr>
       <tr>
@@ -27,11 +28,6 @@
     </table>
   </tr>
 
-  <tr>
-    <td>
-      We hope you enjoyed the card and have a great day!
-    </td>
-  </tr>
 </table>
 </body>
 </html>
