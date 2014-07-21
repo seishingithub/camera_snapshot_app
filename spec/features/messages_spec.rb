@@ -73,6 +73,8 @@ feature 'Managing Form for Sending eCard' do
   #
 
   scenario 'a user can cancel sending of an eCard' do
+    ActionMailer::Base.deliveries = []
+    expect(ActionMailer::Base.deliveries.length).to eq 0
     visit '/'
     click_on 'ECards'
     expect(page).to have_content 'Send eCard'

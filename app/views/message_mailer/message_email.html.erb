@@ -2,41 +2,37 @@
 <html>
 <head>
   <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
-  <style type="text/css">
-    .message_photo img {
-      width: 768px;
-      height: 480px;
-      margin: 0 auto;
-      border: 1px solid lightgray;
-      margin-bottom: 25px;
-      position: relative;
-      color: #58595b;
-      text-align: left;
-    }
-  </style>
 </head>
-<body>
-<div class="message_email_page" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<body style="font-family: Roboto Condensed sans-serif; font-size: 18px">
+<table>
+  <tr>
+    <td>
+      Hi <%= @message.recipient_name %>!<br>
+      You have received an ecard from <%= @message.sender_name %> at <%= @message.sender_email %>:<br>
+    </td>
+  </tr>
+  <tr>
+    <table style="border: 1px double #759185;">
+      <tr>
+        <td>
+          <img src="<%= @photo %>" style="width: 768px; height: 480px; margin: 0 auto; margin-bottom: 25px"><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= @message.message %><br>
+          <br>
+        </td>
+      </tr>
+    </table>
+  </tr>
 
-  <p>Hi <%= @message.recipient_name %>!</p>
-  You have received an ecard from <%= @message.sender_name %> at <%= @message.sender_email %>:<br>
-
-  <div id="photo">
-
-  </div>
-
-
-      <div><img src="<%= @photo %>" style="width: 768px; margin: 0 auto; margin-bottom: 25px"></div>
-
-
-  <p><%= @message.message %></p>
-
-  <p>We hope you enjoyed the card and have a great day!</p>
-
-  <p>
-
-  </p>
-</div>
+  <tr>
+    <td>
+      We hope you enjoyed the card and have a great day!
+    </td>
+  </tr>
+</table>
 </body>
 </html>
 
