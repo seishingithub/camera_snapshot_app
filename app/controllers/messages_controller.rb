@@ -29,16 +29,17 @@ class MessagesController < ApplicationController
     @photo = params[:photo]
     if @message.save
       if params[:commit] == 'Preview'
-        redirect_to preview_message_path(@message)
+        redirect_to preview_message_path(@message, :photo => @photo)  #ADDED @PHOTO HERE
       elsif params[:commit] == 'Send'
         MessageMailer.message_email(@message, @photo).deliver
         # NEED TO CREATE VIEW PAGE FOR SENT MESSAGE
         # PRESENTLY ROUTING TO PREVIEW PAGE
         # 'YOUR CARD WAS SUCCESSFULLY SENT WITH THE
         # FOLLOWING MESSAGE:' (RESEMBLE PREVIEW PAGE)
-        redirect_to preview_message_path(@message)
+        redirect_to preview_message_path(@message, :photo => @photo) #ADDED @PHOTO HERE
       elsif params[:commit] == 'Cancel'
         redirect_to photo_select_index_path
+        flash[:notice] = "Your eCard has been cancelled"
       else
         render new_message_path
       end
@@ -46,6 +47,7 @@ class MessagesController < ApplicationController
   end
 
   def preview
+    @photo = params[:photo]
     @message = Message.find(params[:id])
   end
 

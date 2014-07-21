@@ -10,6 +10,7 @@
   <p>Hi <%= @message.recipient_name %>!</p>
   You have received an ecard from <%= @message.sender_name %> at <%= @message.sender_email %>:<br>
 
+  <p><img src="<%= @photo %>" alt="image for ecard taken from subreddit" width="768" height="480"></p>
   <p><%= @message.message %></p>
 
   <p>We hope you enjoyed the card and have a great day!</p>

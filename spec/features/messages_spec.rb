@@ -91,6 +91,6 @@ feature 'Managing Form for Sending eCard' do
     expect(page).to have_content 'Photo Select' #BACK TO PHOTOSELECT INDEX
     expect(ActionMailer::Base.deliveries.length).to eq 0
     # MAYBE DELETE ABOVE
-    # expect(page).to have_content 'Your message has been cancelled'
+    #expect(page).to have_content 'Your eCard has been cancelled'
   end
 end
