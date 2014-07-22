@@ -79,14 +79,26 @@ footer {
     position: relative;
 }
 
-.ecard_page {
+.ecard_page_header {
   width: 768px;// (960 / 5) * 4
   height: 1768px; // need to change to (480 / 5) * 4 ??  600px?
   margin: 0 auto;
-  border: 1px solid lightgray;
+//  border: 1px solid lightgray;
   margin-bottom: 25px;
   position: relative;
-  color: #58595b;
+//  color: #58595b;
+  text-align: center; //on messages/new, connected to 'insert photo here'
+  // and 'Message (required)' Text Box
+}
+
+.ecard_preview_page_header {
+  width: 768px;// (960 / 5) * 4
+  margin: 0 auto;
+  //  border: 1px solid lightgray;
+  font-family: Roboto Condensed, sans-serif;
+  margin-bottom: 25px;
+  position: relative;
+  //  color: #58595b;
   text-align: center; //on messages/new, connected to 'insert photo here'
   // and 'Message (required)' Text Box
 }
@@ -95,10 +107,11 @@ footer {
   width: 768px;// (960 / 5) * 4
   height: 1768px; // need to change to (480 / 5) * 4 ??  600px?
   margin: 0 auto;
-  border: 1px solid lightgray;
+//  border: 1px solid lightgray;
   margin-bottom: 25px;
   position: relative;
-  color: #58595b;
+//  color: #58595b;
+  padding: 20px;
   text-align: left; //on messages/new, connected to 'insert photo here'
   // and 'Message (required)' Text Box
 }
@@ -151,6 +164,11 @@ footer {
 
 .style_image {
     margin-bottom: 25px;
+}
+
+.message_preview_page {
+  font-family: arial, sans-serif;
+  font-size: 18px;
 }
 
 /*.one_third {*/

@@ -3,9 +3,9 @@
 <head>
   <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
 </head>
-<body style="font-family: Roboto Condensed sans-serif; font-size: 18px">
+<body>
 <div class="message_preview_page" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-  <h3>eCard Preview:</h3>
+  <h1 class="ecard_preview_page_header">eCard Preview:</h1>
   <table>
     <tr>
       <td>
@@ -15,14 +15,14 @@
       </td>
     </tr>
     <tr>
-      <table style="border: 1px double #759185;">
+      <table style="border: 2px solid #759185;">
         <tr>
           <td>
             <img src="<%= @photo %>" alt="image for ecard taken from subreddit" width="768" height="480">
           </td>
         </tr>
         <tr>
-          <td>
+          <td style="padding: 5px;">
             <%= @message.message %>
             <br>
             <br>
