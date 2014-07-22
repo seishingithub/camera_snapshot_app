@@ -10,12 +10,13 @@
     <tr>
       <td>
         Hi <%= @message.recipient_name %>!<br>
+
         <p>You have received an ecard from <%= @message.sender_name %> at <%= @message.sender_email %>:<br>
-        We hope you enjoy the card and have a great day!</p><br>
+          We hope you enjoy the card and have a great day!</p><br>
       </td>
     </tr>
     <tr>
-      <table style="border: 2px solid #759185;">
+      <table style="border: 1px double #759185;">
         <tr>
           <td>
             <img src="<%= @photo %>" alt="image for ecard taken from subreddit" width="768" height="480">
@@ -32,9 +33,15 @@
     </tr>
   </table>
 
-  <a href="<%= deliver_message_path(@message) %>">Send</a><br>
-  <a href="<%= new_message_path(@message) %>">Edit</a><br>
-  <a href="#">Cancel</a>
+  <div class="buttons_on_preview_page">
+    <a href="<%= deliver_message_path(@message) %>" class="btn-preview">Send</a>
+    <a href="<%= new_message_path(@message) %>" class="btn-preview">Edit</a>
+    <a href="#" class="btn-preview">Cancel</a>
+  </div>
+
+  <!--<#%= f.submit 'Preview', :class=> "btn-preview" %>-->
+  <!--<#%= f.submit 'Send', :class=> "btn-preview" %>-->
+  <!--<#%= f.submit 'Cancel', :class=> "btn-preview" %>-->
   <!--CHECK IF 'Cancel' SHOULD LINK TO: <%#= photo_select_path(@photo) %>-->
 </div>
 </body>

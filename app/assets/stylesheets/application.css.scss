@@ -103,6 +103,10 @@ footer {
   // and 'Message (required)' Text Box
 }
 
+.buttons_on_preview_page {
+  text-align: center;
+}
+
 .message_email_page, .message_preview_page {
   width: 768px;// (960 / 5) * 4
   height: 1768px; // need to change to (480 / 5) * 4 ??  600px?
