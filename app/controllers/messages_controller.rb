@@ -9,34 +9,39 @@ class MessagesController < ApplicationController
     @message = Message.new
   end
 
-  def show
-    @message = Message.find(params[:id])
-  end
-
-  # DOUBLE-CHECK BEFORE DELETING
-  # def create
-  #   @message = Message.create(message_params)
-  #   if @message.save
-  #
-  #     redirect_to preview_message_path(@message)
-  #   else
-  #     render new_message_path
-  #   end
-  # end
-
   def create
     @message = Message.create(message_params)
     @photo = params[:photo]
     if @message.save
       if params[:commit] == 'Preview'
-        redirect_to preview_message_path(@message, :photo => @photo)  #ADDED @PHOTO HERE
-      elsif params[:commit] == 'Send'
-        MessageMailer.message_email(@message, @photo).deliver
-        # NEED TO CREATE VIEW PAGE FOR SENT MESSAGE
-        # PRESENTLY ROUTING TO PREVIEW PAGE
-        # 'YOUR CARD WAS SUCCESSFULLY SENT WITH THE
-        # FOLLOWING MESSAGE:' (RESEMBLE PREVIEW PAGE)
-        redirect_to preview_message_path(@message, :photo => @photo) #ADDED @PHOTO HERE
+        redirect_to preview_message_path(@message, :photo => @photo)
+      elsif params[:commit] == 'Cancel'
+        redirect_to photo_select_index_path
+        flash[:notice] = "Your eCard has been cancelled"
+      else
+        render new_message_path
+      end
+    end
+  end
+
+  def show
+    @message = Message.find(params[:id])
+  end
+
+  def edit
+    @photo = params[:photo]
+    @message = Message.find(params[:id])
+    render :new
+  end
+
+  def update
+    @message = Message.find(params[:id])
+    @message.update!(message_params)
+
+    @photo = params[:photo]
+    if @message.save
+      if params[:commit] == 'Preview'
+        redirect_to preview_message_path(@message, :photo => @photo)
       elsif params[:commit] == 'Cancel'
         redirect_to photo_select_index_path
         flash[:notice] = "Your eCard has been cancelled"
@@ -52,7 +57,9 @@ class MessagesController < ApplicationController
   end
 
   def deliver
-    # need to send email that will increment deliveries length (ActionMailer takes care of the increment)
+    @photo = params[:photo]
+    @message = Message.find(params[:id])
+    MessageMailer.message_email(@message, @photo).deliver
     redirect_to photo_select_index_path
   end
 
