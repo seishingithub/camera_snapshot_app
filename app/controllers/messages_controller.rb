@@ -37,7 +37,6 @@ class MessagesController < ApplicationController
   def update
     @message = Message.find(params[:id])
     @message.update!(message_params)
-
     @photo = params[:photo]
     if @message.save
       if params[:commit] == 'Preview'

@@ -36,26 +36,13 @@
   <div class="buttons_on_preview_page">
     <a href="<%= deliver_message_path(@message, :photo => @photo) %>" class="btn-preview">Send</a>
     <a href="<%= edit_message_path(@message, :photo => @photo) %>" class="btn-preview">Edit</a>
-    <a href="<%= photo_select_index_path %>" class="btn-preview">Cancel</a>
+    <%= link_to "Cancel", photo_select_index_path, class:"btn-preview"%>
 
 
   </div>
-
-  <!--<#%= f.submit 'Preview', :class=> "btn-preview" %>-->
-  <!--<#%= f.submit 'Send', :class=> "btn-preview" %>-->
-  <!--<#%= f.submit 'Cancel', :class=> "btn-preview" %>-->
-  <!--CHECK IF 'Cancel' SHOULD LINK TO: <%#= photo_select_path(@photo) %>-->
-
-  <%#= f.submit 'Send', :class=> "btn-preview" %>
-
 </div>
 </body>
 </html>
-
-
-
-
-<!--<img src="<#%= @photo %>" style="width: 768px; height: 480px; margin: 0 auto; margin-bottom: 25px"><br>-->
 
 
 
