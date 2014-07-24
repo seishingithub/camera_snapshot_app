@@ -29,19 +29,19 @@ feature 'Managing Form for Sending eCard' do
       click_on 'Photo Select'
       find("a.button.green", match: :first).click
       fill_in 'Your name', with: 'Peggy'
-      fill_in 'Your email  (required)', with: 'peggy@example.com' # NEED TO ADD VALIDATION
+      fill_in 'Your email  (required)', with: 'peggy@example.com'
       fill_in 'Recipient name', with: 'John Doe'
-      fill_in 'Recipient email  (required)', with: 'john@example.com' # NEED TO ADD VALIDATION
-      fill_in 'Type your message here (required)', with: 'I thought you\'d like this card' # NEED TO ADD VALIDATION
+      fill_in 'Recipient email  (required)', with: 'john@example.com'
+      fill_in 'Type your message here (required)', with: 'I thought you\'d like this card'
       click_on 'Preview'
       expect(page).to have_content 'Hi John Doe!You have received an ecard from Peggy at peggy@example.com:'
       click_on 'Edit'
       fill_in 'Your name', with: 'Peggy Sue'
-      fill_in 'Your email  (required)', with: 'peggysue@example.com' # NEED TO ADD VALIDATION
+      fill_in 'Your email  (required)', with: 'peggysue@example.com'
       fill_in 'Recipient name', with: 'John Boy'
-      fill_in 'Recipient email  (required)', with: 'johnboy@example.com' # NEED TO ADD VALIDATION
-      fill_in 'Type your message here (required)', with: 'I really thought you would like this card' # NEED TO ADD VALIDATION
-      click_on 'Preview' # Presently, this is link reloading messages/new. Need to redirect & retain fields
+      fill_in 'Recipient email  (required)', with: 'johnboy@example.com'
+      fill_in 'Type your message here (required)', with: 'I really thought you would like this card'
+      click_on 'Preview'
       expect(page).to have_content 'Hi John Boy!You have received an ecard from Peggy Sue at peggysue@example.com:'
       click_on 'Send'
       expect(page).to have_content 'Your eCard has been sent!'
@@ -57,19 +57,19 @@ feature 'Managing Form for Sending eCard' do
       click_on 'Photo Select'
       find("a.button.green", match: :first).click
       fill_in 'Your name', with: 'Peggy Griffin'
-      fill_in 'Your email  (required)', with: 'peggy@example.com' # NEED TO ADD VALIDATION
+      fill_in 'Your email  (required)', with: 'peggy@example.com'
       fill_in 'Recipient name', with: 'John Doe'
-      fill_in 'Recipient email  (required)', with: 'john@example.com' # NEED TO ADD VALIDATION
-      fill_in 'Type your message here (required)', with: 'I thought you\'d like this card' # NEED TO ADD VALIDATION
+      fill_in 'Recipient email  (required)', with: 'john@example.com'
+      fill_in 'Type your message here (required)', with: 'I thought you\'d like this card'
       click_on 'Preview'
       click_on 'Send'
       expect(page).to have_content 'Your eCard has been sent!'
       click_on 'ECards'
       fill_in 'Your name', with: 'Peggy Griffin'
-      fill_in 'Your email  (required)', with: 'peggy@example.com' # NEED TO ADD VALIDATION
+      fill_in 'Your email  (required)', with: 'peggy@example.com'
       fill_in 'Recipient name', with: 'Fred'
-      fill_in 'Recipient email  (required)', with: 'fred@example.com' # NEED TO ADD VALIDATION
-      fill_in 'Type your message here (required)', with: 'I wanted you to have this card' # Required
+      fill_in 'Recipient email  (required)', with: 'fred@example.com'
+      fill_in 'Type your message here (required)', with: 'I wanted you to have this card'
       click_on 'Preview'
       click_on 'Send'
       expect(ActionMailer::Base.deliveries.length).to eq 2
@@ -90,10 +90,10 @@ feature 'Managing Form for Sending eCard' do
         find("a.button.green", match: :first).click
         expect(page).to have_content 'Send eCard'
         fill_in 'Your name', with: 'Peggy'
-        fill_in 'Your email  (required)', with: 'peggy@example.com' # NEED TO ADD VALIDATION
+        fill_in 'Your email  (required)', with: 'peggy@example.com'
         fill_in 'Recipient name', with: 'John Doe'
-        fill_in 'Recipient email  (required)', with: 'john@example.com' # NEED TO ADD VALIDATION
-        fill_in 'Type your message here (required)', with: 'I thought you\'d like this card' # NEED TO ADD VALIDATION
+        fill_in 'Recipient email  (required)', with: 'john@example.com'
+        fill_in 'Type your message here (required)', with: 'I thought you\'d like this card'
         click_on 'Preview'
         click_on 'Cancel'
         # expect(page).to have_content 'Your eCard has been cancelled' # FAILING ---- NEED TO ADD FLASH MESSAGE
@@ -101,10 +101,10 @@ feature 'Managing Form for Sending eCard' do
         find("a.button.green", match: :first).click
         expect(page).to have_content 'Send eCard'
         fill_in 'Your name', with: 'Peggy'
-        fill_in 'Your email  (required)', with: 'peggy@example.com' # NEED TO ADD VALIDATION
+        fill_in 'Your email  (required)', with: 'peggy@example.com'
         fill_in 'Recipient name', with: 'John Doe'
-        fill_in 'Recipient email  (required)', with: 'john@example.com' # NEED TO ADD VALIDATION
-        fill_in 'Type your message here (required)', with: 'I thought you\'d like this card' # NEED TO ADD VALIDATION
+        fill_in 'Recipient email  (required)', with: 'john@example.com'
+        fill_in 'Type your message here (required)', with: 'I thought you\'d like this card'
         click_on 'Preview'
         click_on 'Edit'
         click_on 'Cancel'
