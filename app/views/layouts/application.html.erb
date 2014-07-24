@@ -23,6 +23,10 @@
   <!--end header-->
 </header>
 
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
 <div class="colorbar1">&nbsp;</div>
 
 <nav>
