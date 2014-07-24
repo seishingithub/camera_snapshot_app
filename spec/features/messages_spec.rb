@@ -3,102 +3,116 @@ require 'spec_helper'
 feature 'Managing Form for Sending eCard' do
 # NEED TO ADD SPEC TO MAKE SURE PHOTO IS INCLUDED...?
   scenario 'a user can preview and send an eCard (without User Auth)' do
-    ActionMailer::Base.deliveries = []
-    expect(ActionMailer::Base.deliveries.length).to eq 0
-    visit '/'
-    click_on 'ECards'
-    expect(page).to have_content 'Send eCard'
-    fill_in 'Your name', with: 'Peggy Griffin'
-    fill_in 'Your email  (required)', with: 'peggy@example.com' # NEED TO ADD VALIDATION
-    fill_in 'Recipient name', with: 'John Doe'
-    fill_in 'Recipient email  (required)', with: 'john@example.com' # NEED TO ADD VALIDATION
-    fill_in 'Type your message here (required)', with: 'I thought you\'d like this card' # NEED TO ADD VALIDATION
-    click_on 'Preview'
-    VCR.use_cassette('features/photo_select/show') do
+    VCR.use_cassette('features/photo_select/preview_and_send') do
+      ActionMailer::Base.deliveries = []
+      expect(ActionMailer::Base.deliveries.length).to eq 0
+      visit '/'
+      click_on 'Photo Select'
+      find("a.button.green", match: :first).click
+      fill_in 'Your name', with: 'Peggy Griffin'
+      fill_in 'Your email  (required)', with: 'peggy@example.com' # NEED TO ADD VALIDATION
+      fill_in 'Recipient name', with: 'John Doe'
+      fill_in 'Recipient email  (required)', with: 'john@example.com' # NEED TO ADD VALIDATION
+      fill_in 'Type your message here (required)', with: 'I thought you\'d like this card' # NEED TO ADD VALIDATION
+      click_on 'Preview'
       click_on 'Send'
+      # expect(page).to have_content 'Your message has been sent!' # NEED TO ADD FLASH MESSAGE
       expect(ActionMailer::Base.deliveries.length).to eq 1
     end
-    # expect(page).to have_content 'Your message has been sent!' # NEED TO ADD FLASH MESSAGE
   end
 
   scenario 'a user can preview, edit and send an eCard (without User Auth)' do
-    ActionMailer::Base.deliveries = []
-    expect(ActionMailer::Base.deliveries.length).to eq 0
-    visit '/'
-    click_on 'ECards'
-    expect(page).to have_content 'Send eCard'
-    fill_in 'Your name', with: 'Peggy'
-    fill_in 'Your email  (required)', with: 'peggy@example.com' # NEED TO ADD VALIDATION
-    fill_in 'Recipient name', with: 'John Doe'
-    fill_in 'Recipient email  (required)', with: 'john@example.com' # NEED TO ADD VALIDATION
-    fill_in 'Type your message here (required)', with: 'I thought you\'d like this card' # NEED TO ADD VALIDATION
-    click_on 'Preview'
-    expect(page).to have_content 'Hi John Doe!You have received an ecard from Peggy at peggy@example.com:'
-    click_on 'Edit'
-    fill_in 'Your name', with: 'Peggy Sue'
-    fill_in 'Your email  (required)', with: 'peggysue@example.com' # NEED TO ADD VALIDATION
-    fill_in 'Recipient name', with: 'John Boy'
-    fill_in 'Recipient email  (required)', with: 'johnboy@example.com' # NEED TO ADD VALIDATION
-    fill_in 'Type your message here (required)', with: 'I really thought you would like this card' # NEED TO ADD VALIDATION
-    click_on 'Preview' # Presently, this is link reloading messages/new. Need to redirect & retain fields
-    expect(page).to have_content 'Hi John Boy!You have received an ecard from Peggy Sue at peggysue@example.com:'
-    VCR.use_cassette('features/photo_select/show') do
+    VCR.use_cassette('features/photo_select/preview_edit_send') do
+      ActionMailer::Base.deliveries = []
+      expect(ActionMailer::Base.deliveries.length).to eq 0
+      visit '/'
+      click_on 'Photo Select'
+      find("a.button.green", match: :first).click
+      fill_in 'Your name', with: 'Peggy'
+      fill_in 'Your email  (required)', with: 'peggy@example.com' # NEED TO ADD VALIDATION
+      fill_in 'Recipient name', with: 'John Doe'
+      fill_in 'Recipient email  (required)', with: 'john@example.com' # NEED TO ADD VALIDATION
+      fill_in 'Type your message here (required)', with: 'I thought you\'d like this card' # NEED TO ADD VALIDATION
+      click_on 'Preview'
+      expect(page).to have_content 'Hi John Doe!You have received an ecard from Peggy at peggy@example.com:'
+      click_on 'Edit'
+      fill_in 'Your name', with: 'Peggy Sue'
+      fill_in 'Your email  (required)', with: 'peggysue@example.com' # NEED TO ADD VALIDATION
+      fill_in 'Recipient name', with: 'John Boy'
+      fill_in 'Recipient email  (required)', with: 'johnboy@example.com' # NEED TO ADD VALIDATION
+      fill_in 'Type your message here (required)', with: 'I really thought you would like this card' # NEED TO ADD VALIDATION
+      click_on 'Preview' # Presently, this is link reloading messages/new. Need to redirect & retain fields
+      expect(page).to have_content 'Hi John Boy!You have received an ecard from Peggy Sue at peggysue@example.com:'
       click_on 'Send'
-    expect(ActionMailer::Base.deliveries.length).to eq 1
-    end
-    # expect(page).to have_content 'Your message has been sent!' # NEED TO ADD FLASH MESSAGE
-  end
-  # NEED TO ADD SPEC FOR ACTION MAILER
-
-  scenario 'a user can preview and send multiple eCards (without User Auth)' do
-    ActionMailer::Base.deliveries = []
-    expect(ActionMailer::Base.deliveries.length).to eq 0
-    visit '/'
-    click_on 'ECards'
-    expect(page).to have_content 'Send eCard'
-    fill_in 'Your name', with: 'Peggy Griffin'
-    fill_in 'Your email  (required)', with: 'peggy@example.com' # NEED TO ADD VALIDATION
-    fill_in 'Recipient name', with: 'John Doe'
-    fill_in 'Recipient email  (required)', with: 'john@example.com' # NEED TO ADD VALIDATION
-    fill_in 'Type your message here (required)', with: 'I thought you\'d like this card' # NEED TO ADD VALIDATION
-    click_on 'Preview'
-    VCR.use_cassette('features/photo_select/show') do
-      click_on 'Send'
+      # expect(page).to have_content 'Your message has been sent!' # NEED TO ADD FLASH MESSAGE
       expect(ActionMailer::Base.deliveries.length).to eq 1
     end
-    # expect(page).to have_content 'Your message has been sent!' # NEED TO ADD FLASH MESSAGE
-    # click_on 'Send another eCard'
-    click_on 'ECards'
-    expect(page).to have_content 'Send eCard'
-    fill_in 'Your name', with: 'Peggy Griffin'
-    fill_in 'Your email  (required)', with: 'peggy@example.com' # NEED TO ADD VALIDATION
-    fill_in 'Recipient name', with: 'Fred'
-    fill_in 'Recipient email  (required)', with: 'fred@example.com' # NEED TO ADD VALIDATION
-    fill_in 'Type your message here (required)', with: 'I wanted you to have this card' # Required
-    click_on 'Preview'
-    VCR.use_cassette('features/photo_select/show') do
-      click_on 'Send'
-      expect(ActionMailer::Base.deliveries.length).to eq 2
-    end
   end
 
-  scenario 'a user can cancel sending of an eCard' do
-    ActionMailer::Base.deliveries = []
-    expect(ActionMailer::Base.deliveries.length).to eq 0
-    visit '/'
-    click_on 'ECards'
-    expect(page).to have_content 'Send eCard'
-    fill_in 'Your name', with: 'Peggy'
-    fill_in 'Your email  (required)', with: 'peggy@example.com' # NEED TO ADD VALIDATION
-    fill_in 'Recipient name', with: 'John Doe'
-    fill_in 'Recipient email  (required)', with: 'john@example.com' # NEED TO ADD VALIDATION
-    fill_in 'Type your message here (required)', with: 'I thought you\'d like this card' # NEED TO ADD VALIDATION
-    click_on 'Preview'
-    expect(page).to have_content 'Hi John Doe!You have received an ecard from Peggy at peggy@example.com:'
-    expect(page).to have_content 'I thought you\'d like this card'
-    click_on 'Cancel'
-    expect(page).to have_content 'Photo Select'
-    expect(ActionMailer::Base.deliveries.length).to eq 0
-    #expect(page).to have_content 'Your eCard has been cancelled' # NEED TO ADD FLASH MESSAGE
+  scenario 'a user can preview and send multiple eCards (without User Auth)' do
+    VCR.use_cassette('features/photo_select/preview_and_send_two_or_more_cards') do
+      ActionMailer::Base.deliveries = []
+      expect(ActionMailer::Base.deliveries.length).to eq 0
+      visit '/'
+      click_on 'Photo Select'
+      find("a.button.green", match: :first).click
+      fill_in 'Your name', with: 'Peggy Griffin'
+      fill_in 'Your email  (required)', with: 'peggy@example.com' # NEED TO ADD VALIDATION
+      fill_in 'Recipient name', with: 'John Doe'
+      fill_in 'Recipient email  (required)', with: 'john@example.com' # NEED TO ADD VALIDATION
+      fill_in 'Type your message here (required)', with: 'I thought you\'d like this card' # NEED TO ADD VALIDATION
+      click_on 'Preview'
+      click_on 'Send'
+      # expect(page).to have_content 'Your message has been sent!' # NEED TO ADD FLASH MESSAGE
+      # click_on 'Send another eCard'
+      click_on 'ECards'
+      fill_in 'Your name', with: 'Peggy Griffin'
+      fill_in 'Your email  (required)', with: 'peggy@example.com' # NEED TO ADD VALIDATION
+      fill_in 'Recipient name', with: 'Fred'
+      fill_in 'Recipient email  (required)', with: 'fred@example.com' # NEED TO ADD VALIDATION
+      fill_in 'Type your message here (required)', with: 'I wanted you to have this card' # Required
+      click_on 'Preview'
+      click_on 'Send'
+      expect(ActionMailer::Base.deliveries.length).to eq 2
+      end
+    end
+
+    scenario 'a user can cancel sending of an eCard from multiple pages' do
+      VCR.use_cassette('features/photo_select/cancel_ecard_from_multiple_pages') do
+        ActionMailer::Base.deliveries = []
+        expect(ActionMailer::Base.deliveries.length).to eq 0
+        visit '/'
+        click_on 'Photo Select'
+
+        find("a.button.green", match: :first).click
+        click_on 'Cancel'
+        expect(page).to have_content 'Your eCard has been cancelled'
+
+        find("a.button.green", match: :first).click
+        expect(page).to have_content 'Send eCard'
+        fill_in 'Your name', with: 'Peggy'
+        fill_in 'Your email  (required)', with: 'peggy@example.com' # NEED TO ADD VALIDATION
+        fill_in 'Recipient name', with: 'John Doe'
+        fill_in 'Recipient email  (required)', with: 'john@example.com' # NEED TO ADD VALIDATION
+        fill_in 'Type your message here (required)', with: 'I thought you\'d like this card' # NEED TO ADD VALIDATION
+        click_on 'Preview'
+        click_on 'Cancel'
+        expect(page).to have_content 'Your eCard has been cancelled' # FAILING ---- NEED TO ADD FLASH MESSAGE
+
+        find("a.button.green", match: :first).click
+        expect(page).to have_content 'Send eCard'
+        fill_in 'Your name', with: 'Peggy'
+        fill_in 'Your email  (required)', with: 'peggy@example.com' # NEED TO ADD VALIDATION
+        fill_in 'Recipient name', with: 'John Doe'
+        fill_in 'Recipient email  (required)', with: 'john@example.com' # NEED TO ADD VALIDATION
+        fill_in 'Type your message here (required)', with: 'I thought you\'d like this card' # NEED TO ADD VALIDATION
+        click_on 'Preview'
+        click_on 'Edit'
+        click_on 'Cancel'
+        expect(page).to have_content 'a.button.green'
+        expect(page).to have_content 'Your eCard has been cancelled'
+
+        expect(ActionMailer::Base.deliveries.length).to eq 0
+      end
+    end
   end
-end
