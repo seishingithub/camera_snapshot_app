@@ -16,7 +16,7 @@ feature 'Managing Form for Sending eCard' do
       fill_in 'Type your message here (required)', with: 'I thought you\'d like this card' # NEED TO ADD VALIDATION
       click_on 'Preview'
       click_on 'Send'
-      # expect(page).to have_content 'Your message has been sent!' # NEED TO ADD FLASH MESSAGE
+      expect(page).to have_content 'Your eCard has been sent!'
       expect(ActionMailer::Base.deliveries.length).to eq 1
     end
   end
@@ -44,7 +44,7 @@ feature 'Managing Form for Sending eCard' do
       click_on 'Preview' # Presently, this is link reloading messages/new. Need to redirect & retain fields
       expect(page).to have_content 'Hi John Boy!You have received an ecard from Peggy Sue at peggysue@example.com:'
       click_on 'Send'
-      # expect(page).to have_content 'Your message has been sent!' # NEED TO ADD FLASH MESSAGE
+      expect(page).to have_content 'Your eCard has been sent!'
       expect(ActionMailer::Base.deliveries.length).to eq 1
     end
   end
@@ -63,8 +63,7 @@ feature 'Managing Form for Sending eCard' do
       fill_in 'Type your message here (required)', with: 'I thought you\'d like this card' # NEED TO ADD VALIDATION
       click_on 'Preview'
       click_on 'Send'
-      # expect(page).to have_content 'Your message has been sent!' # NEED TO ADD FLASH MESSAGE
-      # click_on 'Send another eCard'
+      expect(page).to have_content 'Your eCard has been sent!'
       click_on 'ECards'
       fill_in 'Your name', with: 'Peggy Griffin'
       fill_in 'Your email  (required)', with: 'peggy@example.com' # NEED TO ADD VALIDATION

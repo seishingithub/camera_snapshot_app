@@ -60,6 +60,7 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
     MessageMailer.message_email(@message, @photo).deliver
     redirect_to photo_select_index_path
+    flash[:notice] = "Your eCard has been sent!"
   end
 
   private
