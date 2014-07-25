@@ -73,9 +73,18 @@ footer {
     background-color: #EFEBDF;
 }
 
+
+
 #photo_home .photo_container {
       width: 960px;
       margin: auto;
+      position: relative;
+}
+
+.one_two_three {
+  width: 850px;
+  margin: auto;
+  position: absolute;
 }
 
 .nature_photos_container {
