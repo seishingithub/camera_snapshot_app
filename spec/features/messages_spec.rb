@@ -7,7 +7,7 @@ feature 'Managing Form for Sending eCard' do
       ActionMailer::Base.deliveries = []
       expect(ActionMailer::Base.deliveries.length).to eq 0
       visit '/'
-      click_on 'Photo Select'
+      find("a.photo_select_btn").click
       find("a.button.green", match: :first).click
       fill_in 'Your name', with: 'Peggy Griffin'
       fill_in 'Your email  (required)', with: 'peggy@example.com' # NEED TO ADD VALIDATION
@@ -26,7 +26,7 @@ feature 'Managing Form for Sending eCard' do
       ActionMailer::Base.deliveries = []
       expect(ActionMailer::Base.deliveries.length).to eq 0
       visit '/'
-      click_on 'Photo Select'
+      find("a.photo_select_btn").click
       find("a.button.green", match: :first).click
       fill_in 'Your name', with: 'Peggy'
       fill_in 'Your email  (required)', with: 'peggy@example.com'
@@ -54,7 +54,7 @@ feature 'Managing Form for Sending eCard' do
       ActionMailer::Base.deliveries = []
       expect(ActionMailer::Base.deliveries.length).to eq 0
       visit '/'
-      click_on 'Photo Select'
+      find("a.photo_select_btn").click
       find("a.button.green", match: :first).click
       fill_in 'Your name', with: 'Peggy Griffin'
       fill_in 'Your email  (required)', with: 'peggy@example.com'
@@ -64,7 +64,7 @@ feature 'Managing Form for Sending eCard' do
       click_on 'Preview'
       click_on 'Send'
       expect(page).to have_content 'Your eCard has been sent!'
-      click_on 'ECards'
+      find("a.ecards_btn").click
       fill_in 'Your name', with: 'Peggy Griffin'
       fill_in 'Your email  (required)', with: 'peggy@example.com'
       fill_in 'Recipient name', with: 'Fred'
@@ -81,7 +81,7 @@ feature 'Managing Form for Sending eCard' do
         ActionMailer::Base.deliveries = []
         expect(ActionMailer::Base.deliveries.length).to eq 0
         visit '/'
-        click_on 'Photo Select'
+        find("a.photo_select_btn").click
 
         find("a.button.green", match: :first).click
         click_on 'Cancel'
