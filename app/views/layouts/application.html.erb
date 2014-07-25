@@ -7,6 +7,8 @@
 
   <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
 
 </head>
 <body>
@@ -29,33 +31,37 @@
 <div class="colorbar1">&nbsp;</div>
 
 <nav>
-  <div id="nav_container">
-    <div class="back">
-      <div class="button_base b05_3d_roll">
-        <div>Home</div>
-        <div>Home</div>
-        <%= link_to "Home", root_path %>
+  <%= link_to root_path, class: "home_btn" do %>
+    <div id="nav_container">
+      <div class="back">
+        <div class="button_base b05_3d_roll">
+          <div>Home</div>
+          <div>Home</div>
+        </div>
       </div>
-    </div>
+  <% end %>
 
+  <%= link_to photo_select_index_path, class: "photo_select_btn" do %>
     <div class="back">
       <div class="button_base b05_3d_roll">
         <div>Photo Select</div>
         <div>Photo Select</div>
-        <%= link_to "Photo Select", photo_select_index_path %>
       </div>
     </div>
+  <% end %>
 
+  <%= link_to new_message_path, class: "ecards_btn" do %>
     <div class="back">
       <div class="button_base b05_3d_roll">
         <div>eCards</div>
         <div>eCards</div>
-        <%= link_to "ECards", new_message_path %>
       </div>
     </div>
+  <% end %>
 
   </div>
-</nav><!--end navigation-->
+</nav>
+<!--end navigation-->
 
 <div class="colorbar1">&nbsp;</div>
 

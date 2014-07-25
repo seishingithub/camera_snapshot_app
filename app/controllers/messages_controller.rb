@@ -50,6 +50,12 @@ class MessagesController < ApplicationController
     end
   end
 
+  def destroy
+    @message = Message.find(params[:id]).destroy
+    redirect_to photo_select_index_path
+    flash[:notice] = "Your eCard has been cancelled"
+  end
+
   def preview
     @photo = params[:photo]
     @message = Message.find(params[:id])
