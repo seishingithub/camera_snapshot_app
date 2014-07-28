@@ -96,7 +96,7 @@ feature 'Managing Form for Sending eCard' do
         fill_in 'Type your message here (required)', with: 'I thought you\'d like this card'
         click_on 'Preview'
         click_on 'Cancel'
-        # expect(page).to have_content 'Your eCard has been cancelled' # FAILING ---- NEED TO ADD FLASH MESSAGE
+        expect(page).to have_content 'Your eCard has been cancelled'
 
         find("a.button.green", match: :first).click
         expect(page).to have_content 'Send eCard'
