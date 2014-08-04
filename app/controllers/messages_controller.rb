@@ -21,6 +21,11 @@ class MessagesController < ApplicationController
       else
         render new_message_path
       end
+    else
+      if params[:commit] == 'Preview'
+        @errors = @message.errors.messages
+        render new_message_path
+      end
     end
   end
 

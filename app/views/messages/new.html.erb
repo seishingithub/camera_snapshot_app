@@ -2,6 +2,20 @@
 
   <h1>Send eCard</h1>
 
+  <div class="one-third">
+    <div id="error_explanation">
+      <% if @message.errors.count == 0 %>
+      <% else %>
+        <h3><%= pluralize(@message.errors.count, "error") %> prevented this ecard from being saved:</h3>
+        <ul>
+          <% @message.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+
   <% if @photo.present? %>
     <div class="message_photo">
       <img src='<%= @photo %>'>
@@ -11,27 +25,30 @@
   <%= form_for @message do |f| %>
     <div class="form_text_field_width">
       <p>
-        <%= f.text_field :sender_name, :placeholder => 'Your name', :class=> "message_text_field"  %>
+        <%= f.text_field :sender_name, :placeholder => 'Your name', :class => "message_text_field" %>
       </p>
+
       <p>
-        <%= f.text_field :sender_email, :placeholder => 'Your email  (required)', :class=> "message_text_field"  %>
+        <%= f.text_field :sender_email, :placeholder => 'Your email  (required)', :class => "message_text_field" %>
       </p>
+
       <p>
-        <%= f.text_field :recipient_name, :placeholder => 'Recipient name', :class=> "message_text_field"  %>
+        <%= f.text_field :recipient_name, :placeholder => 'Recipient name', :class => "message_text_field" %>
       </p>
+
       <p>
-        <%= f.text_field :recipient_email, :placeholder => 'Recipient email  (required)', :class=> "message_text_field" %>
+        <%= f.text_field :recipient_email, :placeholder => 'Recipient email  (required)', :class => "message_text_field" %>
       </p>
     </div>
     <div class="form_text_box_size">
       <p>
-        <%= f.text_area :message, :placeholder => 'Type your message here (required)', :class=> "message_text_box" %>
+        <%= f.text_area :message, :placeholder => 'Type your message here (required)', :class => "message_text_box" %>
       </p>
     </div>
     <p>
       <%= hidden_field_tag 'photo', @photo %>
-      <%= f.submit 'Preview', :class=> "btn-preview" %>
-      <%= f.submit 'Cancel', :class=> "btn-preview" %>
+      <%= f.submit 'Preview', :class => "btn-preview" %>
+      <%= f.submit 'Cancel', :class => "btn-preview" %>
   <% end %>
   </p>
 </div>
