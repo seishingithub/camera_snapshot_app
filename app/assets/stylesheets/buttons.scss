@@ -112,11 +112,11 @@
   position: relative;
   text-align: center;
   text-shadow: 0 1px 1px rgba(black, 0.5);
-  text-decoration: none !important;
   top: 0;
   width: 153px;
   @include transition(0.15s);
   &:hover, &:focus {
+    outline: 0;
     background-color: #759185;
     box-shadow:
     0 0 0 1px #829B90 inset,
