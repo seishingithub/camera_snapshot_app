@@ -10,12 +10,12 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(message_params)
-    @photo = params[:photo]
     if params[:commit] == 'Cancel'
       redirect_to photo_select_index_path
       flash[:notice] = "Your eCard has been cancelled"
     elsif params[:commit] == 'Preview'
+      @message = Message.new(message_params)
+      @photo = params[:photo]
       if @message.save
         redirect_to preview_message_path(@message, :photo => @photo)
       else
@@ -36,16 +36,16 @@ class MessagesController < ApplicationController
   end
 
   def update
-    @message = Message.find(params[:id])
-    @message.update!(message_params)
-    @photo = params[:photo]
-    if @message.save
-      if params[:commit] == 'Preview'
+    if params[:commit] == 'Cancel'
+      redirect_to photo_select_index_path
+      flash[:notice] = "Your eCard has been cancelled"
+    elsif params[:commit] == 'Preview'
+      @message = Message.find(params[:id])
+      @photo = params[:photo]
+      if @message.update(message_params)
         redirect_to preview_message_path(@message, :photo => @photo)
-      elsif params[:commit] == 'Cancel'
-        redirect_to photo_select_index_path
-        flash[:notice] = "Your eCard has been cancelled"
       else
+        @errors = @message.errors.messages
         render new_message_path
       end
     end
