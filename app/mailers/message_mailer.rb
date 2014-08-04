@@ -1,5 +1,5 @@
 class MessageMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "CameraSnapshot@example.com"
 
   def message_email(message, photo)
     @message = message
