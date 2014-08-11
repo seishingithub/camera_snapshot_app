@@ -13,6 +13,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'faraday', '~> 0.9.0'
 gem 'launchy', '~> 2.4.2'
 gem 'compass-rails', '~> 1.1.7'
+gem 'fog', '~> 1.23.0'
+gem 'carrierwave', '~> 0.10.0'
 
 group :test do
   gem 'rake', '~> 10.3.2'

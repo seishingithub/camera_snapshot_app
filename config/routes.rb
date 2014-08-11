@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :photo_select
   resources :photos
   resources :users
+  resources :photo_uploads
   resources :messages do
     member do
       get 'preview'
