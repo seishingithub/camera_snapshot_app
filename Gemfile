@@ -19,7 +19,7 @@ gem 'carrierwave', '~> 0.10.0'
 group :test do
   gem 'rake', '~> 10.3.2'
   gem 'vcr', '~> 2.9.0'
-  gem 'webmock', '~> 1.17.4'
+  gem 'webmock', '~> 1.18.0'
 end
 
 group :development, :test do

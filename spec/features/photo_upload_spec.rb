@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature 'Upload Photos' do
   scenario 'User can upload photos' do
-    VCR.use_cassette('features/photo_upload/aws_uploading_images') do
+    VCR.use_cassette('features/photo_upload/aws_upload_images', :record => :all) do
       visit '/'
       find("a.photo_select_btn").click
       expect(page).to have_content 'Upload Image'
